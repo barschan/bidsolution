@@ -7,117 +7,49 @@
   <meta name="description" content="Sítě proti hmyzu a interiérové stínění na míru. Oblast působení: Jindřichův Hradec, Tábor, Kamenice nad Lipou. Barbora Ivanka Drunecká – BID Solution." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --gold: #F5A800;
-      --gold-dark: #c98900;
-      --gold-light: #fff8e6;
-      --bg:  #fafaf8;
-      --bg2: #f4f2ee;
-      --bg3: #edeae3;
-      --card: #ffffff;
-      --border: rgba(200,165,70,0.22);
+      --gold: #F5A800; --gold-dark: #c98900; --gold-light: #fff8e6;
+      --bg: #fafaf8; --bg2: #f4f2ee; --bg3: #edeae3;
+      --card: #ffffff; --border: rgba(200,165,70,0.22);
       --border-strong: rgba(200,165,70,0.45);
-      --text: #1c1914;
-      --muted: #7a7068;
+      --text: #1c1914; --muted: #7a7068;
     }
-
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      font-weight: 400;
-      line-height: 1.75;
-      overflow-x: hidden;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.75; overflow-x: hidden; }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 4vw;
-      background: rgba(250,250,248,0.96);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo {
-      font-family: Georgia, serif; font-size: 1.55rem;
-      font-weight: 700; letter-spacing: 0.05em;
-      color: var(--gold); text-decoration: none;
-    }
-    nav ul { list-style: none; display: flex; align-items: center; gap: 0; }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4vw; background: rgba(250,250,248,0.96); border-bottom: 1px solid var(--border); }
+    .logo { font-family: Georgia, serif; font-size: 1.55rem; font-weight: 700; letter-spacing: 0.05em; color: var(--gold); text-decoration: none; }
+    nav ul { list-style: none; display: flex; align-items: center; }
     nav > ul > li { position: relative; }
-    nav > ul > li > a {
-      display: block; padding: 0.5rem 1rem;
-      color: var(--muted); text-decoration: none;
-      font-size: 0.8rem; letter-spacing: 0.08em;
-      text-transform: uppercase; transition: color 0.2s; white-space: nowrap;
-    }
+    nav > ul > li > a { display: block; padding: 0.5rem 1rem; color: var(--muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     nav > ul > li > a:hover { color: var(--gold); }
     nav > ul > li.has-dropdown > a::after { content: ' ▾'; font-size: 0.65rem; }
-    .dropdown {
-      display: none; position: absolute; top: 100%; left: 0;
-      background: #fff; border: 1px solid var(--border-strong);
-      min-width: 230px; z-index: 300;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border-strong); min-width: 230px; z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
     nav > ul > li:hover .dropdown { display: block; }
-    .dropdown a {
-      display: block; padding: 0.65rem 1.2rem;
-      color: var(--text); text-decoration: none;
-      font-size: 0.85rem; border-bottom: 1px solid var(--border);
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown a { display: block; padding: 0.65rem 1.2rem; color: var(--text); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid var(--border); transition: background 0.15s; }
     .dropdown a:last-child { border-bottom: none; }
     .dropdown a:hover { background: var(--gold-light); color: var(--gold-dark); }
     .nav-cta { background: var(--gold) !important; color: #fff !important; margin-left: 0.5rem; padding: 0.55rem 1.3rem !important; }
     .nav-cta:hover { background: var(--gold-dark) !important; }
 
-    /* ── HERO ── */
-    #hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 9rem 4vw 6rem; overflow: hidden;
-    }
-    #hero::before {
-      content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%;
-      background: radial-gradient(ellipse at 70% 40%, rgba(245,168,0,0.10) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    #hero::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(200,165,70,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,165,70,0.06) 1px, transparent 1px);
-      background-size: 56px 56px; pointer-events: none;
-    }
+    /* HERO */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 9rem 4vw 6rem; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(ellipse at 70% 40%, rgba(245,168,0,0.10) 0%, transparent 65%); pointer-events: none; }
+    #hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(200,165,70,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,165,70,0.06) 1px, transparent 1px); background-size: 56px 56px; pointer-events: none; }
     .hero-content { position: relative; z-index: 1; max-width: 680px; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.7rem;
-      font-size: 0.74rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem;
-    }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem; }
     .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
-    h1 {
-      font-family: Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4.8rem);
-      font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.4rem;
-    }
+    h1 { font-family: Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.4rem; }
     h1 em { font-style: normal; color: var(--gold); }
     .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 460px; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: 0.85rem 2rem;
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; text-decoration: none;
-      transition: all 0.2s; cursor: pointer; border: none; font-family: inherit;
-    }
+    .btn { display: inline-block; padding: 0.85rem 2rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
     .btn-primary { background: var(--gold); color: #fff; }
     .btn-primary:hover { background: var(--gold-dark); }
     .btn-outline { background: transparent; border: 1px solid var(--border-strong); color: var(--text); }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    .hero-ornament {
-      position: absolute; right: 7vw; top: 50%; transform: translateY(-50%);
-      width: min(320px, 34vw); aspect-ratio: 1; z-index: 1;
-    }
+    .hero-ornament { position: absolute; right: 7vw; top: 50%; transform: translateY(-50%); width: min(320px, 34vw); aspect-ratio: 1; z-index: 1; }
     .hero-ornament-ring { position: absolute; inset: 0; border: 1px solid var(--border-strong); border-radius: 50%; }
     .hero-ornament-ring2 { position: absolute; inset: 18px; border: 1px solid var(--border); border-radius: 50%; }
     .hero-ornament-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
@@ -126,144 +58,124 @@
     @media (max-width: 820px) { .hero-ornament { display: none; } }
     @media (max-width: 600px) { h1 { font-size: 2.4rem; } }
 
-    /* ── SHARED ── */
+    /* SHARED */
     section { position: relative; z-index: 1; }
     .container { max-width: 1140px; margin: 0 auto; padding: 5rem 4vw; }
-    .section-label {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 0.72rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem;
-    }
+    .section-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
     .section-label::before { content: ''; width: 22px; height: 1px; background: var(--gold); display: inline-block; }
     h2 { font-family: Georgia, serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 1rem; }
     h3 { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
     .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong) 30%, var(--border-strong) 70%, transparent); }
 
-    /* ── PRODUCT SECTION HEADER ── */
+    /* PRODUCT SECTIONS */
     .product-section { background: var(--bg2); }
     .product-section:nth-of-type(even) { background: var(--bg); }
-
-    .product-section-header {
-      display: flex; align-items: center; gap: 1.5rem;
-      margin-bottom: 3rem; padding-bottom: 1.5rem;
-      border-bottom: 2px solid var(--border-strong);
-    }
+    .product-section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border-strong); }
     .product-section-icon { font-size: 2.5rem; }
     .product-section-title h2 { margin-bottom: 0.3rem; }
     .product-section-title p { color: var(--muted); font-size: 0.95rem; }
 
-    /* ── CATEGORY CARD (klikací) ── */
-    .cat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1px; background: var(--border); border: 1px solid var(--border);
-      margin-bottom: 2.5rem;
-    }
-
-    /* Sítě: 5 karet → 3+2 bez díry */
+    /* CATEGORY CARDS */
+    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 0; }
+    @media (max-width: 900px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .cat-grid { grid-template-columns: 1fr; } }
     #site .cat-grid { grid-template-columns: repeat(6, 1fr); }
     #site .cat-card:nth-child(1), #site .cat-card:nth-child(2), #site .cat-card:nth-child(3) { grid-column: span 2; }
     #site .cat-card:nth-child(4), #site .cat-card:nth-child(5) { grid-column: span 3; }
     @media (max-width: 900px) { #site .cat-grid { grid-template-columns: repeat(2,1fr); } #site .cat-card { grid-column: span 1 !important; } }
-    @media (max-width: 500px) { #site .cat-grid { grid-template-columns: 1fr; } }
 
-    .cat-card {
-      background: var(--card); padding: 1.8rem 1.5rem;
-      cursor: pointer; position: relative; overflow: hidden;
-      transition: background 0.2s; user-select: none;
-      border: none; text-align: left; width: 100%;
-    }
+    .cat-card { background: var(--card); padding: 1.6rem 1.4rem; cursor: pointer; position: relative; transition: background 0.2s; border: none; text-align: left; width: 100%; }
     .cat-card:hover { background: var(--gold-light); }
-    .cat-card.active { background: var(--gold-light); border-bottom: 2px solid var(--gold); }
-    .cat-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0;
-      width: 0; height: 2px; background: var(--gold); transition: width 0.3s;
-    }
+    .cat-card.active { background: var(--gold-light); }
+    .cat-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
     .cat-card:hover::after, .cat-card.active::after { width: 100%; }
-    .cat-card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
-    .cat-card h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-    .cat-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
-    .cat-card-arrow {
-      position: absolute; top: 1.2rem; right: 1.2rem;
-      font-size: 0.75rem; color: var(--gold); transition: transform 0.3s;
-    }
+    .cat-card-icon { font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
+    .cat-card h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .cat-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .cat-card-arrow { position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem; color: var(--gold); transition: transform 0.3s; }
     .cat-card.active .cat-card-arrow { transform: rotate(180deg); }
 
-    /* ── PRODUCT DETAIL PANEL ── */
-    .detail-panel {
-      display: none;
-      background: var(--card);
-      border: 1px solid var(--border-strong);
-      border-top: 3px solid var(--gold);
-      padding: 2.5rem 2rem;
-      margin-top: -1px;
-      margin-bottom: 0.5rem;
-    }
+    /* DETAIL PANEL */
+    .detail-panel { display: none; background: var(--card); border: 1px solid var(--border-strong); border-top: 3px solid var(--gold); padding: 2.5rem 2rem; }
     .detail-panel.open { display: block; }
+    .detail-panel-title { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.8rem; }
+    .detail-panel-intro { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; max-width: 780px; line-height: 1.7; }
 
-    .detail-panel-title {
-      font-family: Georgia, serif; font-size: 1.3rem;
-      font-weight: 700; color: var(--text); margin-bottom: 0.6rem;
-    }
-    .detail-panel-desc { color: var(--muted); font-size: 0.93rem; margin-bottom: 2rem; max-width: 700px; }
+    /* Product types – clean list layout */
+    .types-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+    .type-row { display: grid; grid-template-columns: 220px 1fr; gap: 0; border-bottom: 1px solid var(--border); }
+    .type-row:last-child { border-bottom: none; }
+    .type-row-name { padding: 1rem 1.2rem; background: var(--bg2); font-family: Georgia, serif; font-weight: 700; font-size: 0.95rem; color: var(--text); border-right: 1px solid var(--border); display: flex; align-items: center; }
+    .type-row-desc { padding: 1rem 1.4rem; font-size: 0.87rem; color: var(--muted); line-height: 1.65; display: flex; align-items: center; }
+    @media (max-width: 600px) { .type-row { grid-template-columns: 1fr; } .type-row-name { border-right: none; border-bottom: 1px solid var(--border); } }
 
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 1px; background: var(--border); border: 1px solid var(--border);
-    }
-    .type-item {
-      background: var(--bg); padding: 1.4rem 1.2rem;
-    }
-    .type-item h4 {
-      font-family: Georgia, serif; font-size: 0.95rem;
-      font-weight: 700; color: var(--text); margin-bottom: 0.5rem;
-    }
-    .type-item ul { list-style: none; padding: 0; }
-    .type-item ul li {
-      font-size: 0.82rem; color: var(--muted);
-      padding: 0.18rem 0; padding-left: 1rem; position: relative;
-    }
-    .type-item ul li::before {
-      content: '–'; position: absolute; left: 0; color: var(--gold);
-    }
-    .type-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+    .detail-cta { margin-top: 1.8rem; display: inline-block; }
 
-    .detail-cta {
-      margin-top: 2rem;
-      display: inline-block;
-    }
-
-    /* ── WHY ── */
+    /* WHY */
     #proc { background: var(--bg); }
     .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.5rem; margin-top: 3.5rem; }
     @media (max-width: 800px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
     .why-item { position: relative; padding-top: 1.5rem; border-top: 2px solid var(--border); }
     .why-number { font-family: Georgia, serif; font-size: 3rem; font-weight: 700; color: rgba(245,168,0,0.13); line-height: 1; margin-bottom: 0.5rem; }
-    .why-item h3 { font-size: 1rem; font-family: inherit; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .why-item h3 { font-size: 1rem; font-family: inherit; font-weight: 600; margin-bottom: 0.4rem; }
     .why-item p { font-size: 0.87rem; color: var(--muted); }
 
-    /* ── OBLAST ── */
+    /* OBLAST */
     #oblast { background: var(--bg2); }
     .oblast-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     @media (max-width: 700px) { .oblast-layout { grid-template-columns: 1fr; gap: 3rem; } }
-    .oblast-map {
-      position: relative; aspect-ratio: 1; max-width: 440px;
-      border: 1px solid var(--border-strong);
-      display: flex; align-items: center; justify-content: center;
-      background: var(--card); overflow: hidden;
-    }
+    .oblast-map { position: relative; aspect-ratio: 1; max-width: 440px; border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; background: var(--card); overflow: hidden; }
     .oblast-map::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(245,168,0,0.07) 0%, transparent 65%); }
     .map-svg { width: 82%; height: 82%; }
     .city-list { list-style: none; margin-top: 2rem; }
-    .city-list li { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 0; border-bottom: 1px solid var(--border); color: var(--text); font-size: 1rem; }
+    .city-list li { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
     .city-list li:last-child { border-bottom: none; }
     .city-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
     .oblast-note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); font-style: italic; }
 
-    /* ── CONTACT ── */
-    #kontakt { background: var(--bg); }
+    /* KONFIGURÁTOR */
+    #konfigurator { background: var(--bg); }
+    .konfig-intro { max-width: 600px; margin-bottom: 3rem; }
+    .konfig-intro p { color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem; }
+
+    .konfig-steps { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .konfig-step-btn { padding: 0.4rem 1rem; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--border-strong); background: var(--card); color: var(--muted); cursor: default; }
+    .konfig-step-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+    .konfig-step-btn.done { background: var(--gold-light); color: var(--gold-dark); border-color: var(--border-strong); }
+
+    .konfig-panel { display: none; }
+    .konfig-panel.active { display: block; }
+
+    .konfig-panel h4 { font-family: Georgia, serif; font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text); }
+
+    .konfig-options { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.5rem; }
+    .konfig-opt { padding: 0.6rem 1.2rem; border: 1px solid var(--border-strong); background: var(--card); color: var(--text); font-size: 0.88rem; cursor: pointer; transition: all 0.18s; }
+    .konfig-opt:hover { border-color: var(--gold); color: var(--gold); }
+    .konfig-opt.selected { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    .konfig-field { margin-bottom: 1.2rem; }
+    .konfig-field label { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    .konfig-field input, .konfig-field select { width: 100%; max-width: 320px; background: var(--card); border: 1px solid var(--border-strong); color: var(--text); font-family: inherit; font-size: 0.95rem; padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s; }
+    .konfig-field input:focus, .konfig-field select:focus { border-color: var(--gold); }
+
+    .konfig-nav { display: flex; gap: 1rem; margin-top: 2rem; align-items: center; }
+    .btn-back { background: transparent; border: 1px solid var(--border-strong); color: var(--muted); }
+    .btn-back:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Výsledek */
+    .konfig-result { background: var(--gold-light); border: 1px solid var(--border-strong); border-top: 3px solid var(--gold); padding: 2rem; margin-top: 1rem; }
+    .konfig-result h4 { font-family: Georgia, serif; font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text); }
+    .result-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .result-row:last-of-type { border-bottom: none; }
+    .result-label { color: var(--muted); }
+    .result-value { font-weight: 600; color: var(--text); }
+    .result-price { font-family: Georgia, serif; font-size: 1.5rem; color: var(--gold-dark); font-weight: 700; margin: 1.2rem 0 0.4rem; }
+    .result-note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+    .konfig-result-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* CONTACT */
+    #kontakt { background: var(--bg2); }
     .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     @media (max-width: 700px) { .contact-wrap { grid-template-columns: 1fr; gap: 3rem; } }
     .contact-info p { color: var(--muted); margin-bottom: 2.5rem; font-size: 0.95rem; }
@@ -274,36 +186,31 @@
     .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
     .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .form-group input, .form-group textarea {
-      background: var(--card); border: 1px solid var(--border-strong);
-      color: var(--text); font-family: inherit; font-size: 0.95rem;
-      padding: 0.85rem 1rem; outline: none; transition: border-color 0.22s; resize: vertical;
-    }
+    .form-group input, .form-group textarea { background: var(--card); border: 1px solid var(--border-strong); color: var(--text); font-family: inherit; font-size: 0.95rem; padding: 0.85rem 1rem; outline: none; transition: border-color 0.22s; resize: vertical; }
     .form-group input::placeholder, .form-group textarea::placeholder { color: #bbb; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { background: var(--bg3); border-top: 1px solid var(--border-strong); padding: 3rem 4vw; }
     .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
-    .footer-logo { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; }
+    .footer-logo { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); }
     .footer-meta { font-size: 0.8rem; color: var(--muted); line-height: 1.85; text-align: right; }
     @media (max-width: 600px) { .footer-meta { text-align: left; } }
 
-    /* reveal */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s, transform 0.65s; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── MOBILE NAV ── */
+    /* MOBILE NAV */
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); }
     @media (max-width: 900px) {
       .nav-toggle { display: flex; }
-      nav > ul { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: rgba(250,250,248,0.99); flex-direction: column; gap: 0; padding: 1rem 0 2rem; overflow-y: auto; border-bottom: 1px solid var(--border); }
+      nav > ul { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: rgba(250,250,248,0.99); flex-direction: column; overflow-y: auto; padding: 1rem 0 2rem; border-bottom: 1px solid var(--border); }
       nav > ul.open { display: flex; }
       nav > ul > li > a { padding: 0.9rem 4vw; font-size: 0.95rem; }
       .dropdown { position: static; box-shadow: none; border: none; border-top: 1px solid var(--border); background: var(--gold-light); display: none; }
       nav > ul > li.open-mob .dropdown { display: block; }
-      .dropdown a { padding-left: 2rem; font-size: 0.88rem; }
+      .dropdown a { padding-left: 2rem; }
       .nav-cta { margin: 0.8rem 4vw !important; text-align: center; display: block; }
     }
   </style>
@@ -313,31 +220,32 @@
 <!-- NAV -->
 <nav>
   <a href="#hero" class="logo">BID Solution</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   <ul id="navMenu">
     <li class="has-dropdown">
       <a href="#stineni">Interiérové stínění</a>
       <div class="dropdown">
-        <a href="#stineni" onclick="openPanel('horizontalni')">Horizontální žaluzie</a>
-        <a href="#stineni" onclick="openPanel('plise')">Látkové žaluzie plisé</a>
-        <a href="#stineni" onclick="openPanel('roletky')">Textilní roletky</a>
-        <a href="#stineni" onclick="openPanel('dennoc')">Roletky Den / Noc</a>
-        <a href="#stineni" onclick="openPanel('vertikalni')">Vertikální žaluzie</a>
-        <a href="#stineni" onclick="openPanel('drevene')">Dřevěné žaluzie</a>
-        <a href="#stineni" onclick="openPanel('bambusove')">Bambusové roletky</a>
-        <a href="#stineni" onclick="openPanel('japonske')">Japonské stěny</a>
+        <a href="#stineni" onclick="openCat('horizontalni')">Horizontální žaluzie</a>
+        <a href="#stineni" onclick="openCat('plise')">Látkové žaluzie plisé</a>
+        <a href="#stineni" onclick="openCat('roletky')">Textilní roletky</a>
+        <a href="#stineni" onclick="openCat('dennoc')">Roletky Den / Noc</a>
+        <a href="#stineni" onclick="openCat('vertikalni')">Vertikální žaluzie</a>
+        <a href="#stineni" onclick="openCat('drevene')">Dřevěné žaluzie</a>
+        <a href="#stineni" onclick="openCat('bambusove')">Bambusové roletky</a>
+        <a href="#stineni" onclick="openCat('japonske')">Japonské stěny</a>
       </div>
     </li>
     <li class="has-dropdown">
       <a href="#site">Sítě proti hmyzu</a>
       <div class="dropdown">
-        <a href="#site" onclick="openPanel('site-okenni')">Pevné okenní sítě rámové</a>
-        <a href="#site" onclick="openPanel('site-dverni')">Pevné dveřní sítě rámové</a>
-        <a href="#site" onclick="openPanel('site-rolovaci')">Rolovací sítě</a>
-        <a href="#site" onclick="openPanel('site-plise')">Plisé sítě dveřní</a>
-        <a href="#site" onclick="openPanel('site-posuvne')">Posuvné sítě dveřní</a>
+        <a href="#site" onclick="openCat('site-okenni')">Pevné okenní sítě rámové</a>
+        <a href="#site" onclick="openCat('site-dverni')">Pevné dveřní sítě rámové</a>
+        <a href="#site" onclick="openCat('site-rolovaci')">Rolovací sítě</a>
+        <a href="#site" onclick="openCat('site-plise')">Plisé sítě dveřní</a>
+        <a href="#site" onclick="openCat('site-posuvne')">Posuvné sítě dveřní</a>
       </div>
     </li>
+    <li><a href="#konfigurator">Konfigurátor</a></li>
     <li><a href="#proc">Proč my</a></li>
     <li><a href="#oblast">Oblast</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
@@ -351,17 +259,13 @@
     <h1>Pohodlí<br>bez kompromisů,<br><em>doma i venku</em></h1>
     <p class="hero-sub">Dodávka a montáž sítí proti hmyzu a interiérového stínění. Přesně na míru vašemu prostoru.</p>
     <div class="hero-actions">
-      <a href="#kontakt" class="btn btn-primary">Nezávazná poptávka</a>
+      <a href="#konfigurator" class="btn btn-primary">Orientační kalkulace</a>
       <a href="#stineni" class="btn btn-outline">Prohlédnout produkty</a>
     </div>
   </div>
   <div class="hero-ornament">
-    <div class="hero-ornament-ring"></div>
-    <div class="hero-ornament-ring2"></div>
-    <div class="hero-ornament-inner">
-      <span class="hero-ornament-icon">🪟</span>
-      <span class="hero-ornament-label">Na míru</span>
-    </div>
+    <div class="hero-ornament-ring"></div><div class="hero-ornament-ring2"></div>
+    <div class="hero-ornament-inner"><span class="hero-ornament-icon">🪟</span><span class="hero-ornament-label">Na míru</span></div>
   </div>
 </section>
 
@@ -374,243 +278,112 @@
       <div class="product-section-title">
         <div class="section-label">Kategorie</div>
         <h2>Interiérové stínění</h2>
-        <p>Klikněte na kategorii a zjistěte dostupné typy produktů.</p>
+        <p>Klikněte na kategorii pro detail produktů.</p>
       </div>
     </div>
-
     <div class="cat-grid reveal">
-      <button class="cat-card" onclick="togglePanel('horizontalni', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">📐</span>
-        <h3>Horizontální žaluzie</h3>
-        <p>Klasické hliníkové žaluzie s lamelami, velká barevná škála.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('plise', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🪗</span>
-        <h3>Látkové žaluzie plisé</h3>
-        <p>Elegantní skládaná tkanina, vhodná i pro atypická okna.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('roletky', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🌀</span>
-        <h3>Textilní roletky</h3>
-        <p>Jednoduchá a spolehlivá ochrana proti slunci, stovky látek.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('dennoc', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">☀️🌙</span>
-        <h3>Roletky Den / Noc</h3>
-        <p>Střídající se průsvitné a neprůsvitné pruhy pro laditelné světlo.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('vertikalni', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🔲</span>
-        <h3>Vertikální žaluzie</h3>
-        <p>Svislé lamely pro velká okna a prosklené stěny.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('drevene', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🪵</span>
-        <h3>Dřevěné žaluzie</h3>
-        <p>Přírodní dřevěné lamely v různých barvách a úpravách.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('bambusove', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🎋</span>
-        <h3>Bambusové roletky</h3>
-        <p>Ekologické přírodní roletky z bambusu a jutových vláken.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('japonske', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🏯</span>
-        <h3>Japonské stěny</h3>
-        <p>Posuvné látkové panely pro moderní interiéry a předělení prostoru.</p>
-      </button>
+      <button class="cat-card" onclick="toggleCat('horizontalni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">📐</span><h3>Horizontální žaluzie</h3><p>Klasické hliníkové žaluzie, velká barevná škála.</p></button>
+      <button class="cat-card" onclick="toggleCat('plise',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪗</span><h3>Látkové žaluzie plisé</h3><p>Elegantní skládaná tkanina, i pro atypická okna.</p></button>
+      <button class="cat-card" onclick="toggleCat('roletky',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🌀</span><h3>Textilní roletky</h3><p>Spolehlivá ochrana proti slunci, stovky látek.</p></button>
+      <button class="cat-card" onclick="toggleCat('dennoc',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">☀️🌙</span><h3>Roletky Den / Noc</h3><p>Plynule laditelná intenzita světla.</p></button>
+      <button class="cat-card" onclick="toggleCat('vertikalni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🔲</span><h3>Vertikální žaluzie</h3><p>Pro velká okna a prosklené stěny.</p></button>
+      <button class="cat-card" onclick="toggleCat('drevene',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪵</span><h3>Dřevěné žaluzie</h3><p>Přírodní lamely v různých barvách.</p></button>
+      <button class="cat-card" onclick="toggleCat('bambusove',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🎋</span><h3>Bambusové roletky</h3><p>Ekologické přírodní roletky.</p></button>
+      <button class="cat-card" onclick="toggleCat('japonske',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🏯</span><h3>Japonské stěny</h3><p>Posuvné látkové panely pro moderní interiéry.</p></button>
     </div>
-
-    <!-- DETAIL PANELY – STÍNĚNÍ -->
 
     <div class="detail-panel" id="panel-horizontalni">
       <div class="detail-panel-title">Horizontální žaluzie</div>
-      <p class="detail-panel-desc">Hliníkové žaluzie s horizontálními lamelami jsou klasickým řešením stínění oken v interiérech. Jejich hlavní výhodou je cenová dostupnost, barevná variabilita a rychlá montáž. Souladem či kontrastem barev s nábytkem lze vytvořit esteticky příjemný a harmonický prostor. Vyrábíme přesně na míru.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>ISOLINE</h4>
-          <p class="type-desc">Nejpoužívanější žaluzie do plastových oken a eurooken. Vhodná pro všechny typy plastových, dřevěných i hliníkových oken. Výhodou je jednoduchost, rychlost montáže, minimální údržba a cenová dostupnost. Možnost domykatelného provedení a barevného sladění lamel i profilů.</p>
-        </div>
-        <div class="type-item">
-          <h4>ISOLINE ECO</h4>
-          <p class="type-desc">Díky konstrukčnímu řešení krytek lze při montáži upravovat polohu převodovek v rozmezí 5 mm. Možnost atypického šikmého provedení. Domykatelné provedení. Vhodná pro plastová okna i eurookna.</p>
-        </div>
-        <div class="type-item">
-          <h4>ISOLINE LOCO</h4>
-          <p class="type-desc">Žaluzie s plechovou krycí lištou LOCO, která díky svému designu dotváří celkovou vizáž moderního interiéru. Krycí lišta je zakončena tenkými plastovými krytkami ve stejné barvě. Technické i estetické provedení ji řadí na pozici špičkového modelu celé produktové řady.</p>
-        </div>
-        <div class="type-item">
-          <h4>ISOLINE PRIM</h4>
-          <p class="type-desc">Nová generace Isoline žaluzií, která spojuje v sobě technické přednosti všech předchozích typů. Ovládána řetízkem, nabízí tradiční barevnou škálu odstínů lamel a barevné sladění horního a dolního profilu. Jednoduchý způsob montáže, domykatelné provedení.</p>
-        </div>
+      <p class="detail-panel-intro">Hliníkové žaluzie s horizontálními lamelami jsou klasickým řešením stínění oken. Jejich výhodou je cenová dostupnost, barevná variabilita a rychlá montáž. Vyrábíme přesně na míru včetně atypických tvarů oken.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">ISOLINE</div><div class="type-row-desc">Nejpoužívanější žaluzie do plastových a eurooken. Jednoduchá montáž, minimální údržba, cenová dostupnost. Možnost domykatelného provedení a barevného sladění lamel i profilů.</div></div>
+        <div class="type-row"><div class="type-row-name">ISOLINE ECO</div><div class="type-row-desc">Nastavitelná poloha převodovek při montáži o 5 mm. Možnost atypického šikmého provedení. Domykatelné provedení, vhodné pro eurooken.</div></div>
+        <div class="type-row"><div class="type-row-name">ISOLINE LOCO</div><div class="type-row-desc">Designová plechová krycí lišta LOCO dotváří vizáž moderního interiéru. Špičkový model celé produktové řady – technicky i esteticky nejlepší volba.</div></div>
+        <div class="type-row"><div class="type-row-name">ISOLINE PRIM</div><div class="type-row-desc">Nová generace Isoline žaluzií spojující přednosti všech typů. Ovládání řetízkem, tradiční barevná škála lamel, domykatelné provedení, jednoduchá montáž.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Horizontální žaluzie')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-plise">
       <div class="detail-panel-title">Látkové žaluzie plisé</div>
-      <p class="detail-panel-desc">Plisé žaluzie mají nepochybně elegantní a moderní vzhled. Vybírat si lze z nejrůznějších barevných odstínů, vzorů a materiálů, což umožňuje vytvořit z plisé žaluzií originální dekorativní doplněk jakéhokoliv stylu interiéru. Vyrábíme ve dvou modelových provedeních a v široké paletě látek – vždy na míru včetně šikmých, kulatých a atypických tvarů.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>LAGARTA</h4>
-          <p class="type-desc">Velmi efektivní, dokonalý a estetický způsob zastínění. Speciální plisovaná látka, široká škála barev. Vysoce elegantní doplněk každého moderního interiéru. Vhodné i pro pergoly se zasklením.</p>
-        </div>
-        <div class="type-item">
-          <h4>DARNI</h4>
-          <p class="type-desc">Vhodné pro atypická okna. Velmi efektivní a estetický způsob zastínění ze speciální plisované látky. Široká škála barev. Vhodné i pro pergoly se zasklením.</p>
-        </div>
+      <p class="detail-panel-intro">Plisé žaluzie mají elegantní a moderní vzhled. Vybírat lze z nejrůznějších barevných odstínů, vzorů a materiálů. Vyrábíme ve dvou provedeních vždy na míru – včetně šikmých, kulatých a atypických oken.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">LAGARTA</div><div class="type-row-desc">Speciální plisovaná látka, velká škála barev. Vysoce elegantní doplněk každého moderního interiéru. Vhodné i pro pergoly se zasklením.</div></div>
+        <div class="type-row"><div class="type-row-name">DARNI</div><div class="type-row-desc">Speciálně vhodné pro atypická okna. Speciální plisovaná látka, velká škála barev. Vhodné i pro pergoly se zasklením.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Látkové žaluzie plisé')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-roletky">
       <div class="detail-panel-title">Textilní roletky</div>
-      <p class="detail-panel-desc">Textilní rolety jsou oblíbeným doplňkem v interiérovém designu. Slouží k regulaci světla a ochraně soukromí v místnosti. Dostupné v široké škále designů a vzorů, což umožňuje výběr takových, které ladí s celkovým stylem interiéru. Instalace je snadná – různé modely umožňují uchycení na stěnu, na strop nebo na rám okna.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>JAZZ 17, JAZZ 32, JAZZ EXPERT</h4>
-          <p class="type-desc">Jednoduchá volně visící textilní roletka s navíjením látky pomocí řetízku. Určená pro montáž na křídlo okna, do ostění nebo přímo na zeď. Bez krytu návinu. Max. šířka 2 500 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>JAZZ 45</h4>
-          <p class="type-desc">Volně visící textilní roletka s hřídelí o průměru 45 mm bez krytu návinu. Ideální pro zastínění velkých oken. Navíjení látky pomocí řetízku. Montáž na zeď nebo do stropu. Max. šířka 3 000 mm, výška 3 000 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>SONATA / SONATA XL</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu a s možností vodících lišt. Ovládání řetízkem. Hliníkový box. Určená pro montáž na strop nebo zeď. Max. šířka 3 000 mm, výška 3 000 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>COLLETE PLUS / COLLETE XL</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu a krycími lištami. Ovládání řetízkem. Určená pro montáž na křídlo okna. Látka je po stranách zajištěna krycími lištami. Max. šířka 1 500 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>OPTIMA / OPTIMA MINI</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu a vodícími lištami. Určená pro montáž na rám okna. Max. šířka 2 000 mm, výška 2 300 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>OPUS</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu, volně visící. Bez krycích lišt, ovládání řetízkem. Určená pro montáž přímo na zeď nebo strop. Max. šířka 2 500 mm, výška 2 800 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STREAM PLUS</h4>
-          <p class="type-desc">Textilní roletka tradiční konstrukce s pružinovým pohonem navíjení látky. Určená pro montáž na křídlo okna nebo přímo na zeď. Max. šířka 2 000 mm, výška 2 000 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STREAM S / LEGEND</h4>
-          <p class="type-desc">Textilní roletka určená výhradně pro střešní okna. Pružinový pohon, montáž na křídlo okna, do ostění nebo přímo na zeď. Max. šířka 1 200 mm, výška 1 400 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Textilní rolety slouží k regulaci světla a ochraně soukromí. Dostupné v široké škále designů a vzorů – od průsvitných až po plně zatemňovací. Různé modely pro montáž na stěnu, strop nebo rám okna.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">JAZZ 17 / 32 / EXPERT</div><div class="type-row-desc">Volně visící, bez krytu návinu, ovládání řetízkem. Montáž na křídlo okna, do ostění nebo na zeď. Max. šířka 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">JAZZ 45</div><div class="type-row-desc">Hřídel průměru 45 mm, ideální pro velká okna. Montáž na zeď nebo strop. Max. šířka 3 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">SONATA / SONATA XL</div><div class="type-row-desc">S krytem návinu, hliníkový box, možnost vodících lišt. Montáž na strop nebo zeď. Max. šířka 3 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">COLLETE PLUS / XL</div><div class="type-row-desc">S krytem a krycími lištami. Montáž na křídlo okna, látka zajištěna krycími lištami. Max. šířka 1 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">OPTIMA / OPTIMA MINI</div><div class="type-row-desc">S krytem a vodícími lištami. Montáž na rám okna. Max. šířka 2 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">OPUS</div><div class="type-row-desc">S krytem návinu, volně visící, bez krycích lišt. Montáž na zeď nebo strop. Max. šířka 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STREAM PLUS</div><div class="type-row-desc">Pružinový pohon navíjení. Montáž na křídlo okna nebo zeď. Max. šířka 2 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STREAM S / LEGEND</div><div class="type-row-desc">Určeno výhradně pro střešní okna. Pružinový pohon. Max. šířka 1 200 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Textilní roletky')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-dennoc">
       <div class="detail-panel-title">Roletky Den / Noc</div>
-      <p class="detail-panel-desc">Textilní rolety den a noc, zvané také dvojité rolety nebo twins rolety, se stávají stále populárnějšími pro svou velkou variabilitu v propustnosti světla. Systém dvojité látky umožňuje jak úplné zakrytí průhledu oknem, tak poloviční průhledovost ve střídajících se pruzích. Výroba přesně na míru s milimetrovou přesností.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>JAZZ 17 (Den/Noc)</h4>
-          <p class="type-desc">Jednoduchá volně visící roletka bez krytu návinu. Neinvazivní instalace zavěšením na plastové háčky. Určená hlavně pro uchycení na křídlo okna. Max. šířka 1 300 mm, výška 1 600 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>JAZZ EXPERT (Den/Noc)</h4>
-          <p class="type-desc">Jednoduchá volně visící roletka bez krytu návinu. Určená hlavně pro montáž na stěnu. Max. šířka 1 800 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>COLLETE PLUS / COLLETE XL (Den/Noc)</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu a krycími lištami. Určená pro montáž na křídlo okna, mezi zasklívací lišty. Látka je po stranách zajištěna krycími lištami. Max. šířka 1 500 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>OPTIMA (Den/Noc)</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu a vodícími lištami. Určená pro nalepení na křídlo okna – bez vrtání. Látka se pohybuje ve vodících lištách tvaru C. Max. šířka 1 500 mm, výška 2 300 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>OPUS (Den/Noc)</h4>
-          <p class="type-desc">Textilní roletka s krytem návinu, volně visící. Půlkulatý box bez krycích nebo vodících lišt. Pro montáž přímo na zeď nebo strop. Max. šířka 2 400 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>SONATA / SONATA XL (Den/Noc)</h4>
-          <p class="type-desc">Uzavřený hliníkový box v hranatém designu. Možnost vodících lišt. Určená pro montáž na strop nebo zeď. Max. šířka 2 400 mm, výška 2 500 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Textilní rolety den a noc umožňují plynulou regulaci světla střídáním průsvitných a neprůsvitných pruhů. Systém dvojité látky umožňuje jak úplné zakrytí, tak poloviční průhledovost. Výroba přesně na míru.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">JAZZ 17 (D/N)</div><div class="type-row-desc">Bez krytu návinu, volně visící. Neinvazivní instalace na háčky. Max. šířka 1 300 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">JAZZ EXPERT (D/N)</div><div class="type-row-desc">Bez krytu návinu, montáž na zeď. Max. šířka 1 800 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">COLLETE PLUS / XL (D/N)</div><div class="type-row-desc">S krytem a krycími lištami. Montáž na křídlo okna. Max. šířka 1 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">OPTIMA (D/N)</div><div class="type-row-desc">S krytem a vodícími lištami. Nalepení na křídlo – bez vrtání. Max. šířka 1 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">OPUS (D/N)</div><div class="type-row-desc">S krytem, půlkulatý box, montáž na zeď nebo strop. Max. šířka 2 400 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">SONATA / XL (D/N)</div><div class="type-row-desc">Hranatý hliníkový box, možnost vodících lišt. Max. šířka 2 400 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Roletky Den/Noc')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-vertikalni">
       <div class="detail-panel-title">Vertikální žaluzie</div>
-      <p class="detail-panel-desc">Vertikální žaluzie jsou ideální volbou pro velké prosklené stěny v rodinných domech i v kancelářích. Elegantním způsobem zajišťují stínění proti slunci i ochranu soukromí. Natočení lamel je volitelné, stejně jako míra zakrytí okenní plochy. Vyrábíme na míru přesně pro vyměřený prostor včetně atypických tvarů.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>STANDARD</h4>
-          <p class="type-desc">Žaluzie s oblým profilem určená pro zastínění velkých prosklených stěn, oken nebo pro předělení velkých místností. Plastová distance. Možnost osazení látkovou lamelou o šířce 127 mm nebo 89 mm. Atypické provedení.</p>
-        </div>
-        <div class="type-item">
-          <h4>LUX</h4>
-          <p class="type-desc">Žaluzie s oblým profilem určená pro zastínění velkých prosklených stěn, oken nebo pro předělení velkých místností. Kovová distance, prémiové provedení. Možnost osazení látkovou lamelou o šířce 127 mm nebo 89 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Vertikální žaluzie jsou ideální pro velké prosklené stěny v rodinných domech i kancelářích. Svislé lamely elegantně nahrazují záclony. Vyrábíme na míru včetně atypických tvarů, max. šířka 6 m, výška 4 m.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">STANDARD</div><div class="type-row-desc">Oblý profil, plastová distance. Lamely 127 mm nebo 89 mm. Atypické provedení.</div></div>
+        <div class="type-row"><div class="type-row-name">LUX</div><div class="type-row-desc">Oblý profil, kovová distance, prémiové provedení. Lamely 127 mm nebo 89 mm. Velká barevná škála.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Vertikální žaluzie')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-drevene">
       <div class="detail-panel-title">Dřevěné žaluzie</div>
-      <p class="detail-panel-desc">Dřevěné žaluzie jsou elegantním stíněním oken, které vnášejí do interiéru přírodní element a podněcují pocit tepla a pohody. Umožňují plynule regulovat úroveň zastínění a přefiltrování světla přes dřevěné lamely. Jsou stylovým, estetickým a luxusním doplňkem interiéru. Vyrábíme ve 2 volitelných šířkách lamel.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>25 mm lamela</h4>
-          <p class="type-desc">Žaluzie dodávaná v interiérovém provedení s čelním vývodem ovládání. Ovládání pomocí ovládací tyčky a provázku s hruškou. Možnost provedení s horním profilem ISSO.</p>
-        </div>
-        <div class="type-item">
-          <h4>50 mm lamela</h4>
-          <p class="type-desc">Žaluzie dodávaná v interiérovém provedení s čelním vývodem ovládání. K jednoduchému vytažení slouží provázek s aretací. Naklápění lamel je zajištěno provázky s hruškou. Ovládání provázek + tyčka do max. šíře 1 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>50 mm Retro</h4>
-          <p class="type-desc">Žaluzie v interiérovém provedení s čelním vývodem ovládání. Vytažení provázkem s aretací, naklápění lamel provázky s hruškou. Tento model nabízí možnost volby barevných páskových žebříků pro designový retro vzhled.</p>
-        </div>
+      <p class="detail-panel-intro">Dřevěné žaluzie vnášejí do interiéru přírodní element a pocit tepla. Umožňují plynulou regulaci světla. Vyrábíme ve 2 šířkách lamel, velký výběr barevných odstínů dřeva.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">25 mm lamela</div><div class="type-row-desc">Interiérové provedení s čelním vývodem. Ovládání tyčkou a provázkem s hruškou. Možnost provedení s profilem ISSO.</div></div>
+        <div class="type-row"><div class="type-row-name">50 mm lamela</div><div class="type-row-desc">Vytažení provázkem s aretací, naklápění provázky s hruškou. Ovládání provázek + tyčka do šíře 1 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">50 mm Retro</div><div class="type-row-desc">Barevné páskové žebříky pro designové retro provedení. Vytažení provázkem s aretací.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Dřevěné žaluzie')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-bambusove">
       <div class="detail-panel-title">Bambusové roletky</div>
-      <p class="detail-panel-desc">Bambusové rolety dokáží příjemně ozvláštnit atmosféru v místnosti. Jsou nejen účinnou protisluneční clonou, ale také elegantním doplňkem designu interiéru v přírodním stylu. Bambus je hypoalergenní, pohlcuje vlhkost v prostoru a je rychle obnovitelná a dostupná surovina. Vhodné i do pergoly či venkovních altánů.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>ASHA</h4>
-          <p class="type-desc">Tkanina je rolována směrem nahoru do úhledného balu. Ovládání roletky je zajištěno provázkem a aretací s brzdou, který umožňuje nastavit výšku stažení roletky. Max. šířka 2 400 mm, výška 2 500 mm, min. šířka 350 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>FEBA</h4>
-          <p class="type-desc">Elegantní typ bambusové roletky, kdy se tkanina postupně skládá v horizontálních pruzích za sebou, čímž vzniká pravidelné řasení. Ovládání provázkem a aretací s brzdou. Max. šířka 2 400 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>EDESA</h4>
-          <p class="type-desc">Vyráběna pouze z přírodní tkaniny juta. Ovládání je zajištěno navíjením na hřídel pomocí řetízku a mechanizmu s brzdou. Umožňuje libovolné nastavení výšky stažení. Max. šířka 1 800 mm, výška 2 000 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Bambusové rolety jsou nejen účinnou protisluneční clonou, ale elegantním doplňkem přírodního stylu interiéru. Bambus je hypoalergenní, pohlcuje vlhkost a je rychle obnovitelná surovina. Vhodné i do pergoly.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">ASHA</div><div class="type-row-desc">Tkanina se roluje nahoru do úhledného balu. Provázek s aretací a brzdou. Max. šířka 2 400 mm, výška 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">FEBA</div><div class="type-row-desc">Tkanina se skládá v horizontálních pruzích – pravidelné řasení. Provázek s aretací a brzdou. Max. šířka 2 400 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">EDESA</div><div class="type-row-desc">Z přírodní tkaniny juta. Navíjení na hřídel pomocí řetízku s brzdou. Max. šířka 1 800 mm, výška 2 000 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Bambusové roletky')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-japonske">
       <div class="detail-panel-title">Japonské stěny</div>
-      <p class="detail-panel-desc">Japonské stěny, nebo také posuvné panelové stěny, jsou oblíbeným dekoračním doplňkem nejen k proskleným stěnám, ale také za účelem předělení místnosti. Látkové panelové závěsy se mohou posouvat do obou stran anebo mohou být na jedné straně seskládány za sebou. Vyrábíme na míru v širokém výběru látek, barev a textur.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>Japonská stěna</h4>
-          <p class="type-desc">Interiérový prostor zastíní, současně ale umožní prostup dostatečného množství světla. Jsou vhodné pro zastínění velkých prosklených ploch nebo pro předělení prostorných místností. Vzájemné nastavení polohy panelů umožňuje jednoduchou regulaci intenzity stínění. Velmi dekorativně působí střídání panelů s různou propustností světla.</p>
-        </div>
+      <p class="detail-panel-intro">Japonské panelové posuvné stěny jsou oblíbeným dekoračním doplňkem k proskleným stěnám i praktickým způsobem předělení místnosti. Panely se posouvají do obou stran nebo se seskládají na jedné straně. Vyrábíme na míru v širokém výběru látek.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">Japonská stěna</div><div class="type-row-desc">Zastíní interiér a zároveň umožní prostup světla. Nastavitelná intenzita stínění střídáním panelů s různou průhledovostí látek. Vhodné pro velké prosklené plochy nebo předělení místnosti.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('stineni','Japonské stěny')">Spočítat orientační cenu →</a>
     </div>
-
   </div>
 </section>
 
@@ -623,167 +396,173 @@
       <div class="product-section-title">
         <div class="section-label">Kategorie</div>
         <h2>Sítě proti hmyzu</h2>
-        <p>Klikněte na kategorii a zjistěte dostupné typy sítí.</p>
+        <p>Klikněte na kategorii pro detail produktů.</p>
       </div>
     </div>
-
     <div class="cat-grid reveal">
-      <button class="cat-card" onclick="togglePanel('site-okenni', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🪟</span>
-        <h3>Pevné okenní sítě rámové</h3>
-        <p>Hliníkový rám přesně na míru okna, jednoduché uchycení.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('site-dverni', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🚪</span>
-        <h3>Pevné dveřní sítě rámové</h3>
-        <p>Odolná konstrukce na dveřní otvory, bezpečnostní zavírání.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('site-rolovaci', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">📜</span>
-        <h3>Rolovací sítě</h3>
-        <p>Pohodlné rolování nahoru nebo do strany, tiché navíjení.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('site-plise', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">🪗</span>
-        <h3>Plisé sítě dveřní</h3>
-        <p>Skládací síť, průchod bez použití rukou, magnetické dovírání.</p>
-      </button>
-      <button class="cat-card" onclick="togglePanel('site-posuvne', this)">
-        <span class="cat-card-arrow">▼</span>
-        <span class="cat-card-icon">↔️</span>
-        <h3>Posuvné sítě dveřní</h3>
-        <p>Posun do strany, ideální pro terasy a velké otvory.</p>
-      </button>
+      <button class="cat-card" onclick="toggleCat('site-okenni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪟</span><h3>Pevné okenní sítě rámové</h3><p>Hliníkový rám přesně na míru okna.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-dverni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🚪</span><h3>Pevné dveřní sítě rámové</h3><p>Odolná konstrukce pro dveřní otvory.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-rolovaci',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">📜</span><h3>Rolovací sítě</h3><p>Tiché navíjení, pro okna i dveře.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-plise',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪗</span><h3>Plisé sítě dveřní</h3><p>Průchod bez použití rukou, magnetické dovírání.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-posuvne',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">↔️</span><h3>Posuvné sítě dveřní</h3><p>Posun do strany, pro terasy a velké otvory.</p></button>
     </div>
-
-    <!-- DETAIL PANELY – SÍTĚ -->
 
     <div class="detail-panel" id="panel-site-okenni">
       <div class="detail-panel-title">Pevné okenní sítě rámové</div>
-      <p class="detail-panel-desc">Pevné okenní sítě jsou skvělým řešením pro udržení pohodlí v domě bez obtěžování hmyzem. Nanovlákenná membrána (protipylová síťovina) pomáhá snížit množství alergenů, pylů, smogu a prachu. Síť se jednoduše instaluje a velmi lehce se také z okna sejme pro uskladnění v zimě, čímž se zvyšuje její životnost. Vyrábíme z kvalitních hliníkových profilů přesně na míru.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>Profil OV</h4>
-          <p class="type-desc">Rám sítě z válcovaných hliníkových profilů. Systémy uchycení – PVC obrtlík nebo „Z" držák. Vnitřní i vnější rohy, možnost šikminy dle okótovaného nákresu. Umožňují sejmutí sítě z okna. Max. šířka 1 300 mm, výška 1 700 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil ISSO OV</h4>
-          <p class="type-desc">Rám sítě z válcovaných hliníkových profilů. Systémy uchycení – PVC obrtlík nebo otočný držák. Vnitřní i vnější rohy, možnost šikminy. Umožňují sejmutí sítě z okna. Max. šířka 1 500 mm, výška 1 800 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil OE</h4>
-          <p class="type-desc">Rám sítě z extrudovaných hliníkových profilů. Uchycení – PVC obrtlík. Možnost lakování dle vzorníku RAL nebo polep renolitovou fólií. Vnitřní i vnější rohy. Max. šířka 1 800 mm, výška 1 800 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil ISSO OE</h4>
-          <p class="type-desc">Rám sítě z extrudovaných hliníkových profilů. Uchycení otočným držákem. Možnost lakování dle vzorníku RAL nebo polep renolitovou fólií. Vnitřní rohy. Max. šířka 1 800 mm, výška 1 800 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil OE 32×11 LUX</h4>
-          <p class="type-desc">Vhodný pro uchycení na hliníková okna. Rám z extrudovaných hliníkových profilů. Uchycení „Z" držákem. Možnost lakování dle vzorníku RAL. Vnitřní rohy. Max. šířka 1 800 mm, výška 1 800 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Pevné okenní sítě z kvalitních hliníkových profilů přesně na míru. Jednoduché sejmutí pro čištění nebo zimní uskladnění. Volitelně s nanovlákennou membránou (protipylová síťovina).</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">Profil OV</div><div class="type-row-desc">Válcované hliníkové profily. Uchycení PVC obrtlíkem nebo „Z" držákem. Vnitřní i vnější rohy, možnost šikminy. Max. 1 300 × 1 700 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil ISSO OV</div><div class="type-row-desc">Válcované profily, uchycení PVC obrtlíkem nebo otočným držákem. Vnitřní i vnější rohy, možnost šikminy. Max. 1 500 × 1 800 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil OE</div><div class="type-row-desc">Extrudované profily, PVC obrtlík. Možnost lakování dle RAL nebo renolitová fólie. Max. 1 800 × 1 800 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil ISSO OE</div><div class="type-row-desc">Extrudované profily, otočný držák. Možnost lakování dle RAL. Max. 1 800 × 1 800 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil OE 32×11 LUX</div><div class="type-row-desc">Pro hliníková okna, „Z" držák. Možnost lakování dle RAL. Max. 1 800 × 1 800 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('site','Pevné okenní sítě rámové')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-site-dverni">
       <div class="detail-panel-title">Pevné dveřní sítě rámové</div>
-      <p class="detail-panel-desc">Sítě proti hmyzu do dveří jsou spolehlivou ochranou proti nežádoucímu hmyzu. S využitím moderních materiálů může síť chránit také proti pylu a smogu, přitom však zachovává volné proudění vzduchu. Na přání lze dveřní síť vybavit průchodem pro kočky a psy. Vyrábíme přesně na míru s možností použití inovativní nanotechnologie.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>Profil DE 50×20</h4>
-          <p class="type-desc">Rám sítě z extrudovaných hliníkových profilů. Plochá příčka. Celá síť se montuje na dveřní rám pomocí pantů. Vnitřní rohy. Max. šířka 1 000 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil DV 50×20</h4>
-          <p class="type-desc">Rám sítě z válcovaných hliníkových profilů. Celá síť se montuje na dveřní rám pomocí pantů. Vnější rohy. Max. šířka 1 000 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil DE 40×20 LUX</h4>
-          <p class="type-desc">Rám z extrudovaných hliníkových profilů. Líbivý oblý design profilu s elegantní „S" příčkou. Montáž na dveřní rám pomocí pantů. Možnost pomocného rámu pro montáž do ostění. Max. šířka 1 000 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>Profil DE 50×20 LUX</h4>
-          <p class="type-desc">Rám z extrudovaných hliníkových profilů. Montáž na dveřní rám pomocí pantů. Těsnící kartáček. Vnitřní rohy. Max. šířka 1 000 mm, výška 2 500 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Spolehlivá ochrana pro vstupní i balkonové dveře. Montáž pantami přímo na dveřní rám. Volitelně s nanoúpravou zachytávající pyl a alergeny. Na přání průchod pro domácí mazlíčky.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">Profil DE 50×20</div><div class="type-row-desc">Extrudované profily, plochá příčka, montáž pantami. Vnitřní rohy. Max. 1 000 × 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil DV 50×20</div><div class="type-row-desc">Válcované profily, montáž pantami, vnější rohy. Max. 1 000 × 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil DE 40×20 LUX</div><div class="type-row-desc">Oblý design s elegantní „S" příčkou. Možnost pomocného rámu pro montáž do ostění. Max. 1 000 × 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">Profil DE 50×20 LUX</div><div class="type-row-desc">Extrudované profily, těsnící kartáček. Vnitřní rohy. Max. 1 000 × 2 500 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('site','Pevné dveřní sítě rámové')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-site-rolovaci">
       <div class="detail-panel-title">Rolovací sítě</div>
-      <p class="detail-panel-desc">Rolovací sítě proti hmyzu jsou vhodnou volbou v případech, kdy je třeba zachovat oknem nebo dveřmi volný průchod. Rolovací mechanismus umožňuje jednoduché otevírání a zavírání sítě. Instalace stahovací sítě je nenáročná a rychlá. Barvu profilu si lze zvolit k rámu okna. Sítě jsou vybaveny zpomalovací brzdou – navíjení je plynulé a tiché.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>VERSA (okenní)</h4>
-          <p class="type-desc">Pro montáž na jakýkoliv druh okna. Nabízí velkou variabilitu v možnostech montáže. Dorazová lišta je aretována buď koncovými dorazy, nebo záchytnou dorazovou lištou. Max. šířka 2 000 mm, výška 2 300 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>DAROS (dveřní)</h4>
-          <p class="type-desc">Pro montáž na rámy i ostění dveří. Dorazová lišta je držena v rozvinuté poloze magnetickou gumou. Max. šířka 1 300 mm, výška 2 300 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Rolovací sítě umožňují jednoduché otevírání a zavírání. Vybaveny zpomalovací brzdou pro tichý a plynulý navin. Barvu profilu lze zvolit dle rámu okna nebo dveří.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">VERSA (okenní)</div><div class="type-row-desc">Pro jakýkoliv druh okna, velká variabilita montáže. Aretace koncovými dorazy nebo záchytnou lištou. Max. 2 000 × 2 300 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">DAROS (dveřní)</div><div class="type-row-desc">Pro montáž na rámy i ostění dveří. Dorazová lišta držena magnetickou gumou. Max. 1 300 × 2 300 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('site','Rolovací sítě')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-site-plise">
       <div class="detail-panel-title">Plisé sítě dveřní</div>
-      <p class="detail-panel-desc">Plisé dveřní sítě, také nazývané skládací sítě, mají elegantní design a harmonicky souzní s designem moderního domu. Jsou velmi praktické svou prostorovou nenáročností a téměř zneviditelněním v rámu, když zrovna není síť roztažená. Vyrábíme také bezbariérové (bezprahové) provedení a přesně na míru. Magnetické dovírání zajišťuje spolehlivou funkci.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>STELLAR NEO</h4>
-          <p class="type-desc">Prostorově úsporné provedení – hloubka pouhých 22 mm díky provázkového systému napínání. Montáž na rám i montáž do ostění. Profily opatřeny magnety pro spolehlivé dovření. Max. šířka 2 400 mm, výška 3 000 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STELLAR NEO OPONA</h4>
-          <p class="type-desc">Dvoukřídlé provedení plisé sítě (opona). Hloubka 22 mm, montáž na rám i do ostění. Magnetické dovírání. Max. šířka 4 800 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STELLAR</h4>
-          <p class="type-desc">Bezbariérový přístup – výška přechodového profilu pouze 5 mm. Pro montáž do ostění. Profily opatřeny magnety. Jednořetězový systém. Max. šířka 1 700 mm, výška 2 600 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STELLAR MINI</h4>
-          <p class="type-desc">Prostorově úsporné provedení s hloubkou 21 mm. Montáž na rám i do ostění pomocí speciálních klipů. Vhodný pro montáž pod venkovní stínicí techniku. Extrémně tichý chod. Max. šířka 1 900 mm, výška 2 700 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STELLAR LUX</h4>
-          <p class="type-desc">Dvojřetězový systém pro spolehlivější chod. Bezbariérový přístup – přechodový profil pouze 5 mm. Pro montáž do ostění. Magnetické dovírání. Max. šířka 2 000 mm, výška 3 000 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>STELLAR OPONA / LUX OPONA</h4>
-          <p class="type-desc">Dvoukřídlá provedení (opona) s bezbariérovým přístupem. Možnost vícekřídlých provedení až do šíře 7 800 mm. Montáž do ostění nebo na rám. Max. výška 3 000 mm.</p>
-        </div>
+      <p class="detail-panel-intro">Skládací sítě s elegantním designem se složí do boku a jsou téměř neviditelné v rámu. Bezbariérové provedení (přechodový profil jen 5 mm). Magnetické dovírání, výroba přesně na míru.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">STELLAR NEO</div><div class="type-row-desc">Hloubka pouhých 22 mm, montáž na rám i do ostění, magnetické dovírání. Max. 2 400 × 3 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STELLAR NEO OPONA</div><div class="type-row-desc">Dvoukřídlé provedení (opona), hloubka 22 mm. Max. šířka 4 800 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STELLAR</div><div class="type-row-desc">Bezbariérový přístup (5 mm profil), montáž do ostění, jednořetězový systém. Max. 1 700 × 2 600 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STELLAR MINI</div><div class="type-row-desc">Hloubka 21 mm, extrémně tichý chod, vhodný pod venkovní stínicí techniku. Max. 1 900 × 2 700 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STELLAR LUX</div><div class="type-row-desc">Dvojřetězový systém, bezbariérový (5 mm profil). Max. 2 000 × 3 000 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">STELLAR OPONA / LUX OPONA</div><div class="type-row-desc">Dvoukřídlá provedení, bezbariérový přístup, až do šíře 7 800 mm.</div></div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('site','Plisé sítě dveřní')">Spočítat orientační cenu →</a>
     </div>
 
     <div class="detail-panel" id="panel-site-posuvne">
       <div class="detail-panel-title">Posuvné sítě dveřní</div>
-      <p class="detail-panel-desc">Posuvné sítě proti hmyzu do francouzských dveří, terasových nebo balkónových dveří jsou ideální volbou tam, kde není dostatečný prostor pro otevření dveří. Vodorovně posuvné sítě vyrábíme v rámu nebo v liště, přesně na míru dveřního otvoru. Vysunutí a zasunutí sítě je velmi lehké a tiché.</p>
-      <div class="types-grid">
-        <div class="type-item">
-          <h4>PS1 ECO / PS1 ECO Z (v lištách)</h4>
-          <p class="type-desc">Vhodné pro montáž na rám dveří. Vodicí lišty, elegantní „S" příčka. Jedno pojezdové křídlo, nevyžaduje žádný prostor pro otevření. Velmi lehký a tichý chod. Max. šířka 1 700 mm, výška 2 500 mm.</p>
+      <p class="detail-panel-intro">Ideální pro francouzská, terasová a posuvná dveřní okna. Vysunutí a zasunutí je velmi lehké a tiché. Výroba v rámu nebo v liště přesně na míru dveřního otvoru.</p>
+      <div class="types-list">
+        <div class="type-row"><div class="type-row-name">PS1 ECO / PS1 ECO Z</div><div class="type-row-desc">Vodicí lišty, elegantní „S" příčka, jedno pojezdové křídlo. Max. 1 700 × 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">PS1 / PS1 Z</div><div class="type-row-desc">Vodicí lišty, jedno pojezdové křídlo, lehký a tichý chod. Max. 1 700 × 2 500 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">PSR1 / PSR2</div><div class="type-row-desc">Vnější rám, montáž na rám i do ostění, jedno nebo dvě křídla. Max. šířka 3 400 mm.</div></div>
+        <div class="type-row"><div class="type-row-name">PSR1 ECO / PSR2 ECO</div><div class="type-row-desc">Vnější rám, elegantní „S" příčka, jedno nebo dvě křídla. Max. šířka 3 400 mm.</div></div>
+      </div>
+      <a href="#konfigurator" class="btn btn-primary detail-cta" onclick="prefill('site','Posuvné sítě dveřní')">Spočítat orientační cenu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KONFIGURÁTOR ══ -->
+<div class="divider"></div>
+<section id="konfigurator">
+  <div class="container">
+    <div class="konfig-intro reveal">
+      <div class="section-label">Orientační kalkulace</div>
+      <h2>Konfigurátor</h2>
+      <p>Navolte parametry a získejte orientační cenu. Přesnou cenu vždy potvrdíme po bezplatném zaměření u vás doma.</p>
+    </div>
+
+    <div class="konfig-steps" id="konfSteps">
+      <div class="konfig-step-btn active" id="step1btn">1. Typ produktu</div>
+      <div class="konfig-step-btn" id="step2btn">2. Rozměry</div>
+      <div class="konfig-step-btn" id="step3btn">3. Montáž &amp; lokalita</div>
+      <div class="konfig-step-btn" id="step4btn">4. Výsledek</div>
+    </div>
+
+    <!-- KROK 1: TYP -->
+    <div class="konfig-panel active" id="krok1">
+      <h4>Jaký produkt vás zajímá?</h4>
+      <div class="konfig-options" id="optKategorie">
+        <div class="konfig-opt" onclick="selectOpt(this,'kategorie')">Interiérové stínění</div>
+        <div class="konfig-opt" onclick="selectOpt(this,'kategorie')">Sítě proti hmyzu</div>
+      </div>
+      <div id="podKategorieWrap" style="display:none;">
+        <h4 style="margin-top:1.2rem;">Konkrétní typ:</h4>
+        <div class="konfig-options" id="optPodkategorie"></div>
+      </div>
+      <div class="konfig-nav">
+        <button class="btn btn-primary" onclick="goStep(2)" id="btnK1Next" disabled>Pokračovat →</button>
+      </div>
+    </div>
+
+    <!-- KROK 2: ROZMĚRY -->
+    <div class="konfig-panel" id="krok2">
+      <h4>Zadejte přibližné rozměry</h4>
+      <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1.5rem;">Orientační rozměry stačí – přesné zaměření provedeme zdarma u vás doma.</p>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+        <div class="konfig-field">
+          <label>Šířka (cm)</label>
+          <input type="number" id="inputSirka" placeholder="např. 120" min="10" max="600" />
         </div>
-        <div class="type-item">
-          <h4>PS1 / PS1 Z (v lištách)</h4>
-          <p class="type-desc">Vhodné pro montáž na rám dveří. Vodicí lišty. Jedno pojezdové křídlo, nevyžaduje žádný prostor pro otevření. Lehký a tichý chod. Max. šířka 1 700 mm, výška 2 500 mm.</p>
+        <div class="konfig-field">
+          <label>Výška (cm)</label>
+          <input type="number" id="inputVyska" placeholder="např. 150" min="10" max="400" />
         </div>
-        <div class="type-item">
-          <h4>PSR1 / PSR2 (v rámu)</h4>
-          <p class="type-desc">Vhodné jak pro montáž na rám, tak i pro montáž do ostění. Vnější rám. Jedno nebo dvě pojezdová křídla, nevyžaduje žádný prostor pro otevření. Max. šířka 3 400 mm, výška 2 500 mm.</p>
-        </div>
-        <div class="type-item">
-          <h4>PSR1 ECO / PSR2 ECO (v rámu)</h4>
-          <p class="type-desc">Montáž na rám i do ostění. Vnější rám, elegantní „S" příčka. Jedno nebo dvě pojezdová křídla. Velmi lehký a tichý chod, příjemné ovládání. Max. šířka 3 400 mm, výška 2 500 mm.</p>
+        <div class="konfig-field">
+          <label>Počet kusů</label>
+          <input type="number" id="inputKusy" placeholder="1" min="1" max="50" value="1" />
         </div>
       </div>
-      <a href="#kontakt" class="btn btn-primary detail-cta">Mám zájem – kontaktujte mě</a>
+      <div class="konfig-nav">
+        <button class="btn btn-back btn" onclick="goStep(1)">← Zpět</button>
+        <button class="btn btn-primary" onclick="goStep(3)">Pokračovat →</button>
+      </div>
+    </div>
+
+    <!-- KROK 3: MONTÁŽ & LOKALITA -->
+    <div class="konfig-panel" id="krok3">
+      <h4>Způsob dodání a montáže</h4>
+      <div class="konfig-options" id="optMontaz">
+        <div class="konfig-opt" onclick="selectOpt(this,'montaz')">S montáží</div>
+        <div class="konfig-opt" onclick="selectOpt(this,'montaz')">Bez montáže (vlastní)</div>
+      </div>
+      <h4 style="margin-top:1.5rem;">Kde bydlíte?</h4>
+      <div class="konfig-field" style="margin-top:0.8rem;">
+        <label>Lokalita</label>
+        <select id="selectLokalita">
+          <option value="">-- Vyberte oblast --</option>
+          <option value="jh">Jindřichův Hradec a okolí (do 15 km)</option>
+          <option value="tabor">Tábor a okolí (do 15 km)</option>
+          <option value="kamenice">Kamenice nad Lipou a okolí (do 15 km)</option>
+          <option value="dalsi">Jiná lokalita – domluvíme individuálně</option>
+        </select>
+      </div>
+      <div class="konfig-nav">
+        <button class="btn btn-back btn" onclick="goStep(2)">← Zpět</button>
+        <button class="btn btn-primary" onclick="spocitat()">Spočítat →</button>
+      </div>
+    </div>
+
+    <!-- KROK 4: VÝSLEDEK -->
+    <div class="konfig-panel" id="krok4">
+      <div class="konfig-result">
+        <h4>Orientační kalkulace</h4>
+        <div id="resultRows"></div>
+        <div class="result-price" id="resultPrice"></div>
+        <div class="result-note">⚠️ Jedná se o orientační cenu. Přesná cena bude stanovena po bezplatném zaměření u vás doma. Cena zahrnuje výrobu na míru, <span id="resultMontazText"></span>.</div>
+        <div class="konfig-result-actions">
+          <a href="#kontakt" class="btn btn-primary" id="btnPoptavka">Odeslat poptávku s těmito údaji</a>
+          <button class="btn btn-outline" onclick="resetKonfig()">Nová kalkulace</button>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -796,26 +575,10 @@
     <div class="section-label reveal">Proč BID Solution</div>
     <h2 class="reveal">Přístup, na který<br>se můžete spolehnout</h2>
     <div class="why-grid">
-      <div class="why-item reveal">
-        <div class="why-number">01</div>
-        <h3>Měření zdarma</h3>
-        <p>Přijedeme, změříme a poradíme – bez závazku a bez poplatku.</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-number">02</div>
-        <h3>Výroba na míru</h3>
-        <p>Každý produkt vzniká přesně dle rozměrů vašich oken a dveří.</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-number">03</div>
-        <h3>Profesionální montáž</h3>
-        <p>Instalaci provádíme svépomocně – čistě, rychle, bez starostí.</p>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-number">04</div>
-        <h3>Místní živnostník</h3>
-        <p>Žijeme ve stejném regionu. Záruční servis je pro nás samozřejmost.</p>
-      </div>
+      <div class="why-item reveal"><div class="why-number">01</div><h3>Měření zdarma</h3><p>Přijedeme, změříme a poradíme – bez závazku a bez poplatku.</p></div>
+      <div class="why-item reveal"><div class="why-number">02</div><h3>Výroba na míru</h3><p>Každý produkt vzniká přesně dle rozměrů vašich oken a dveří.</p></div>
+      <div class="why-item reveal"><div class="why-number">03</div><h3>Profesionální montáž</h3><p>Instalaci provádíme svépomocně – čistě, rychle, bez starostí.</p></div>
+      <div class="why-item reveal"><div class="why-number">04</div><h3>Místní živnostník</h3><p>Žijeme ve stejném regionu. Záruční servis je pro nás samozřejmost.</p></div>
     </div>
   </div>
 </section>
@@ -826,18 +589,14 @@
   <div class="container">
     <div class="oblast-layout">
       <div class="oblast-map reveal">
-        <svg class="map-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="map-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
           <defs><radialGradient id="mg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F5A800" stop-opacity="0.12"/><stop offset="100%" stop-color="#F5A800" stop-opacity="0"/></radialGradient></defs>
           <circle cx="150" cy="150" r="130" fill="url(#mg)" stroke="rgba(200,165,70,0.3)" stroke-width="1"/>
           <circle cx="150" cy="150" r="85" fill="none" stroke="rgba(200,165,70,0.18)" stroke-width="1" stroke-dasharray="4 4"/>
-          <circle cx="150" cy="150" r="40" fill="none" stroke="rgba(200,165,70,0.22)" stroke-width="1"/>
-          <circle cx="150" cy="150" r="8" fill="#F5A800"/>
-          <circle cx="150" cy="150" r="14" fill="rgba(245,168,0,0.18)"/>
-          <text x="168" y="155" fill="#c98900" font-size="10" font-family="Arial, sans-serif" font-weight="600">Jindřichův Hradec</text>
-          <circle cx="95" cy="85" r="5" fill="rgba(245,168,0,0.75)"/>
-          <text x="105" y="89" fill="#c98900" font-size="9" font-family="Arial, sans-serif">Tábor</text>
-          <circle cx="188" cy="108" r="5" fill="rgba(245,168,0,0.75)"/>
-          <text x="122" y="111" fill="#c98900" font-size="9" font-family="Arial, sans-serif">Kamenice n. L.</text>
+          <circle cx="150" cy="150" r="8" fill="#F5A800"/><circle cx="150" cy="150" r="14" fill="rgba(245,168,0,0.18)"/>
+          <text x="168" y="155" fill="#c98900" font-size="10" font-family="Arial" font-weight="600">Jindřichův Hradec</text>
+          <circle cx="95" cy="85" r="5" fill="rgba(245,168,0,0.75)"/><text x="105" y="89" fill="#c98900" font-size="9" font-family="Arial">Tábor</text>
+          <circle cx="188" cy="108" r="5" fill="rgba(245,168,0,0.75)"/><text x="122" y="111" fill="#c98900" font-size="9" font-family="Arial">Kamenice n. L.</text>
           <line x1="150" y1="150" x2="95" y2="85" stroke="rgba(200,165,70,0.3)" stroke-width="1"/>
           <line x1="150" y1="150" x2="188" y2="108" stroke="rgba(200,165,70,0.3)" stroke-width="1"/>
         </svg>
@@ -865,41 +624,17 @@
         <div class="section-label">Kontakt</div>
         <h2>Napište nebo<br>zavolejte</h2>
         <p>Rádi zodpovíme vaše dotazy, domluvíme bezplatné měření nebo připravíme cenovou nabídku.</p>
-        <div class="info-block">
-          <span class="label">Telefon</span>
-          <a href="tel:+420606643865">+420 606 643 865</a>
-        </div>
-        <div class="info-block">
-          <span class="label">E-mail</span>
-          <a href="mailto:info@bidsolution.cz">info@bidsolution.cz</a>
-        </div>
-        <div class="info-block">
-          <span class="label">Adresa</span>
-          <span>Vajgar 728<br>377 01 Jindřichův Hradec</span>
-        </div>
-        <div class="info-block">
-          <span class="label">Provozovatel</span>
-          <span>Barbora Ivanka Drunecká<br>IČO: 69771341</span>
-        </div>
+        <div class="info-block"><span class="label">Telefon</span><a href="tel:+420606643865">+420 606 643 865</a></div>
+        <div class="info-block"><span class="label">E-mail</span><a href="mailto:info@bidsolution.cz">info@bidsolution.cz</a></div>
+        <div class="info-block"><span class="label">Adresa</span><span>Vajgar 728<br>377 01 Jindřichův Hradec</span></div>
+        <div class="info-block"><span class="label">Provozovatel</span><span>Barbora Ivanka Drunecká<br>IČO: 69771341</span></div>
       </div>
       <div class="reveal">
         <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Jméno a příjmení</label>
-            <input type="text" id="name" name="name" placeholder="Jana Nováková" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+420 600 000 000" />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="jana@email.cz" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Zpráva</label>
-            <textarea id="message" name="message" rows="5" placeholder="Popište prosím váš zájem nebo dotaz…" required></textarea>
-          </div>
+          <div class="form-group"><label for="name">Jméno a příjmení</label><input type="text" id="name" name="name" placeholder="Jana Nováková" required /></div>
+          <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" placeholder="+420 600 000 000" /></div>
+          <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="jana@email.cz" required /></div>
+          <div class="form-group"><label for="message">Zpráva</label><textarea id="message" name="message" rows="5" placeholder="Popište prosím váš zájem nebo dotaz…" required></textarea></div>
           <button type="submit" class="btn btn-primary">Odeslat poptávku →</button>
         </form>
       </div>
@@ -907,83 +642,182 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">BID Solution</div>
-    <div class="footer-meta">
-      Barbora Ivanka Drunecká &nbsp;·&nbsp; IČO: 69771341<br>
-      Vajgar 728, 377 01 Jindřichův Hradec<br>
-      &copy; <span id="year"></span> BID Solution. Všechna práva vyhrazena.
-    </div>
+    <div class="footer-meta">Barbora Ivanka Drunecká &nbsp;·&nbsp; IČO: 69771341<br>Vajgar 728, 377 01 Jindřichův Hradec<br>&copy; <span id="year"></span> BID Solution. Všechna práva vyhrazena.</div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Aktuálně otevřený panel
-  var currentPanel = null;
-  var currentCard = null;
+// NAV
+var toggle = document.getElementById('navToggle');
+var menu = document.getElementById('navMenu');
+toggle.addEventListener('click', function() { menu.classList.toggle('open'); });
+menu.querySelectorAll('li.has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) { if (window.innerWidth <= 900) { e.preventDefault(); this.parentElement.classList.toggle('open-mob'); } });
+});
+menu.querySelectorAll('a:not(.has-dropdown > a)').forEach(function(a) {
+  a.addEventListener('click', function() { menu.classList.remove('open'); });
+});
 
-  function openPanel(id) {
-    closeAll();
-    var panel = document.getElementById('panel-' + id);
-    if (panel) { panel.classList.add('open'); currentPanel = panel; }
+// REVEAL
+if ('IntersectionObserver' in window) {
+  var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); } }); }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+} else { document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); }); }
+
+// PRODUCT PANELS
+function toggleCat(id, card) {
+  var panel = document.getElementById('panel-' + id);
+  var isOpen = panel.classList.contains('open');
+  document.querySelectorAll('.detail-panel').forEach(function(p) { p.classList.remove('open'); });
+  document.querySelectorAll('.cat-card').forEach(function(c) { c.classList.remove('active'); });
+  if (!isOpen) {
+    panel.classList.add('open');
+    card.classList.add('active');
+    setTimeout(function() { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
   }
+}
+function openCat(id) {
+  document.querySelectorAll('.detail-panel').forEach(function(p) { p.classList.remove('open'); });
+  document.querySelectorAll('.cat-card').forEach(function(c) { c.classList.remove('active'); });
+  var panel = document.getElementById('panel-' + id);
+  if (panel) { panel.classList.add('open'); setTimeout(function() { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100); }
+}
 
-  function togglePanel(id, card) {
-    var panel = document.getElementById('panel-' + id);
-    if (!panel) return;
-    var isOpen = panel.classList.contains('open');
-    closeAll();
-    if (!isOpen) {
-      panel.classList.add('open');
-      card.classList.add('active');
-      currentPanel = panel;
-      currentCard = card;
-      // scroll k panelu
-      setTimeout(function() { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
-    }
-  }
+// KONFIGURÁTOR
+var konfData = { kategorie: '', podkategorie: '', sirka: 0, vyska: 0, kusy: 1, montaz: '', lokalita: '' };
 
-  function closeAll() {
-    document.querySelectorAll('.detail-panel').forEach(function(p) { p.classList.remove('open'); });
-    document.querySelectorAll('.cat-card').forEach(function(c) { c.classList.remove('active'); });
-    currentPanel = null; currentCard = null;
-  }
+var stineniTypes = ['Horizontální žaluzie','Látkové žaluzie plisé','Textilní roletky','Roletky Den/Noc','Vertikální žaluzie','Dřevěné žaluzie','Bambusové roletky','Japonské stěny'];
+var siteTypes = ['Pevné okenní sítě rámové','Pevné dveřní sítě rámové','Rolovací sítě','Plisé sítě dveřní','Posuvné sítě dveřní'];
 
-  // Nav
-  var toggle = document.getElementById('navToggle');
-  var menu = document.getElementById('navMenu');
-  toggle.addEventListener('click', function() { menu.classList.toggle('open'); });
-  menu.querySelectorAll('li.has-dropdown > a').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      if (window.innerWidth <= 900) { e.preventDefault(); this.parentElement.classList.toggle('open-mob'); }
+// Základní ceny za m² (orientační)
+var cenyM2 = {
+  'Horizontální žaluzie': 650, 'Látkové žaluzie plisé': 1200, 'Textilní roletky': 800,
+  'Roletky Den/Noc': 1100, 'Vertikální žaluzie': 700, 'Dřevěné žaluzie': 1400,
+  'Bambusové roletky': 900, 'Japonské stěny': 1000,
+  'Pevné okenní sítě rámové': 500, 'Pevné dveřní sítě rámové': 700,
+  'Rolovací sítě': 1300, 'Plisé sítě dveřní': 2200, 'Posuvné sítě dveřní': 1800
+};
+
+function selectOpt(el, group) {
+  el.closest('.konfig-options').querySelectorAll('.konfig-opt').forEach(function(o) { o.classList.remove('selected'); });
+  el.classList.add('selected');
+  konfData[group] = el.textContent.trim();
+
+  if (group === 'kategorie') {
+    var types = konfData.kategorie === 'Interiérové stínění' ? stineniTypes : siteTypes;
+    var wrap = document.getElementById('podKategorieWrap');
+    var optEl = document.getElementById('optPodkategorie');
+    optEl.innerHTML = '';
+    types.forEach(function(t) {
+      var d = document.createElement('div');
+      d.className = 'konfig-opt';
+      d.textContent = t;
+      d.onclick = function() { selectOpt(this, 'podkategorie'); };
+      optEl.appendChild(d);
     });
-  });
-  menu.querySelectorAll('a:not(.has-dropdown > a)').forEach(function(a) {
-    a.addEventListener('click', function() { menu.classList.remove('open'); });
-  });
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    wrap.style.display = 'block';
+    konfData.podkategorie = '';
+    document.getElementById('btnK1Next').disabled = true;
   }
+  if (group === 'podkategorie') {
+    document.getElementById('btnK1Next').disabled = false;
+  }
+}
 
-  // Formulář
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-    window.location.href = 'mailto:info@bidsolution.cz?subject=Popt%C3%A1vka%20od%20' + encodeURIComponent(name) + '&body=' + encodeURIComponent(message + '\n\n' + email);
+function goStep(n) {
+  [1,2,3,4].forEach(function(i) {
+    document.getElementById('krok'+i).classList.remove('active');
+    var btn = document.getElementById('step'+i+'btn');
+    btn.classList.remove('active','done');
+    if (i < n) btn.classList.add('done');
   });
+  document.getElementById('krok'+n).classList.add('active');
+  document.getElementById('step'+n+'btn').classList.add('active');
+  document.getElementById('konfigurator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function spocitat() {
+  konfData.sirka = parseFloat(document.getElementById('inputSirka').value) || 100;
+  konfData.vyska = parseFloat(document.getElementById('inputVyska').value) || 150;
+  konfData.kusy = parseInt(document.getElementById('inputKusy').value) || 1;
+  konfData.lokalita = document.getElementById('selectLokalita').value;
+
+  var produkt = konfData.podkategorie || konfData.kategorie;
+  var cenM2 = cenyM2[produkt] || 800;
+  var plocha = (konfData.sirka / 100) * (konfData.vyska / 100);
+  var cenaProduktu = Math.round(cenM2 * plocha * konfData.kusy);
+  var cenaMontaz = 0;
+  var cenaDopr = 0;
+
+  if (konfData.montaz === 'S montáží') {
+    cenaMontaz = Math.round(350 * konfData.kusy + 200);
+  }
+  if (konfData.lokalita === 'jh') cenaDopr = 0;
+  else if (konfData.lokalita === 'tabor' || konfData.lokalita === 'kamenice') cenaDopr = 200;
+  else if (konfData.lokalita === 'dalsi') cenaDopr = 0;
+
+  var celkem = cenaProduktu + cenaMontaz + cenaDopr;
+  var min = Math.round(celkem * 0.85);
+  var max = Math.round(celkem * 1.20);
+
+  var rows = document.getElementById('resultRows');
+  rows.innerHTML = '';
+  function addRow(l, v) { rows.innerHTML += '<div class="result-row"><span class="result-label">'+l+'</span><span class="result-value">'+v+'</span></div>'; }
+
+  addRow('Produkt', produkt);
+  addRow('Rozměry', konfData.sirka + ' × ' + konfData.vyska + ' cm, ' + konfData.kusy + ' ks');
+  addRow('Plocha celkem', Math.round(plocha * konfData.kusy * 100) / 100 + ' m²');
+  addRow('Cena produktu', cenaProduktu.toLocaleString('cs-CZ') + ' Kč');
+  if (cenaMontaz > 0) addRow('Montáž', cenaMontaz.toLocaleString('cs-CZ') + ' Kč');
+  if (cenaDopr > 0) addRow('Doprava', cenaDopr.toLocaleString('cs-CZ') + ' Kč');
+  else if (konfData.lokalita && konfData.lokalita !== 'dalsi') addRow('Doprava', 'zdarma');
+
+  document.getElementById('resultPrice').textContent = min.toLocaleString('cs-CZ') + ' – ' + max.toLocaleString('cs-CZ') + ' Kč';
+  document.getElementById('resultMontazText').textContent = konfData.montaz === 'S montáží' ? 'dopravu a montáž' : 'dopravu (bez montáže)';
+
+  // Připravit mailto s předvyplněnými daty
+  var zprava = 'Zájem o: ' + produkt + '\nRozměry: ' + konfData.sirka + ' × ' + konfData.vyska + ' cm, ' + konfData.kusy + ' ks\nMontáž: ' + (konfData.montaz||'nezadáno') + '\nOrientační cena: ' + min.toLocaleString('cs-CZ') + ' – ' + max.toLocaleString('cs-CZ') + ' Kč';
+  document.getElementById('btnPoptavka').href = 'mailto:info@bidsolution.cz?subject=Popt%C3%A1vka%20z%20konfigur%C3%A1toru&body=' + encodeURIComponent(zprava);
+
+  goStep(4);
+}
+
+function resetKonfig() {
+  konfData = { kategorie: '', podkategorie: '', sirka: 0, vyska: 0, kusy: 1, montaz: '', lokalita: '' };
+  document.querySelectorAll('.konfig-opt').forEach(function(o) { o.classList.remove('selected'); });
+  document.getElementById('podKategorieWrap').style.display = 'none';
+  document.getElementById('inputSirka').value = '';
+  document.getElementById('inputVyska').value = '';
+  document.getElementById('inputKusy').value = '1';
+  document.getElementById('selectLokalita').value = '';
+  document.getElementById('btnK1Next').disabled = true;
+  goStep(1);
+}
+
+function prefill(kat, pod) {
+  setTimeout(function() {
+    var katEl = document.querySelector('#optKategorie .konfig-opt[onclick*="' + (kat === 'stineni' ? 'Interiérové' : 'Sítě') + '"]');
+    if (katEl) { selectOpt(katEl, 'kategorie'); }
+    setTimeout(function() {
+      var podEl = Array.from(document.querySelectorAll('#optPodkategorie .konfig-opt')).find(function(el) { return el.textContent.trim() === pod; });
+      if (podEl) selectOpt(podEl, 'podkategorie');
+    }, 100);
+  }, 200);
+}
+
+// FORM
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var n = document.getElementById('name').value, em = document.getElementById('email').value, m = document.getElementById('message').value;
+  window.location.href = 'mailto:info@bidsolution.cz?subject=Popt%C3%A1vka%20od%20' + encodeURIComponent(n) + '&body=' + encodeURIComponent(m + '\n\n' + em);
+});
 </script>
 </body>
 </html>
+
+  
