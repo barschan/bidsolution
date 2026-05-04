@@ -277,6 +277,10 @@
     .product-card-btn:hover { background: var(--gold-dark); }
     @media (max-width: 600px) { .product-cards { grid-template-columns: 1fr; } }
 
+    /* SCROLL TO TOP */
+    #scrollTop { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; width: 46px; height: 46px; background: var(--gold); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s, background 0.2s, transform 0.2s; }
+    #scrollTop.visible { opacity: 1; pointer-events: auto; }
+    #scrollTop:hover { background: var(--gold-dark); transform: translateY(-3px); }
   </style>
 </head>
 <body>
@@ -9048,5 +9052,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   </div>
 </div>
 
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Nahoru">&#8679;</button>
+<script>
+  window.addEventListener('scroll', function(){ document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400); });
+</script>
 </body>
 </html>
