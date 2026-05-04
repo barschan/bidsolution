@@ -73,6 +73,11 @@
     .product-section-title h2 { margin-bottom: 0.3rem; }
     .product-section-title p { color: var(--muted); font-size: 0.95rem; }
 
+    /* SECTION BANNER */
+    .section-banner { width: 100%; margin-bottom: 2.5rem; overflow: hidden; max-height: 420px; border: 1px solid var(--border); }
+    .section-banner img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    @media (max-width: 600px) { .section-banner img { height: 220px; } }
+
     /* CATEGORY CARDS */
     .cat-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 0; }
     .cat-grid::after { content: ''; flex: 0 0 calc(33.333% - 1px); background: var(--card); }
@@ -340,6 +345,9 @@
         <h2>Interiérové stínění</h2>
         <p>Klikněte na kategorii pro detail produktů.</p>
       </div>
+    </div>
+    <div class="section-banner reveal">
+      <img src="img/hero.jpg" alt="Interiérové stínění BID Solution" loading="lazy">
     </div>
     <div class="cat-grid reveal">
       <button class="cat-card" onclick="toggleCat('horizontalni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/isoline_product.jpg" alt="Horizontální žaluzie" loading="lazy"></div><h3>Horizontální žaluzie</h3><p>Klasické hliníkové žaluzie, velká barevná škála.</p></button>
@@ -678,6 +686,9 @@
         <h2>Sítě proti hmyzu</h2>
         <p>Klikněte na kategorii pro detail produktů.</p>
       </div>
+    </div>
+    <div class="section-banner reveal">
+      <img src="img/hero.jpg" alt="Sítě proti hmyzu BID Solution" loading="lazy">
     </div>
     <div class="cat-grid reveal">
       <button class="cat-card" onclick="toggleCat('site-okenni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_oe.jpg" alt="Pevné okenní sítě" loading="lazy"></div><h3>Pevné okenní sítě rámové</h3><p>Hliníkový rám přesně na míru okna.</p></button>
