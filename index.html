@@ -37,31 +37,23 @@
     @media (max-width: 900px) { .nav-phone { display: none; } }
 
     /* HERO */
-    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 9rem 4vw 6rem; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(ellipse at 70% 40%, rgba(245,168,0,0.10) 0%, transparent 65%); pointer-events: none; }
-    #hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(200,165,70,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,165,70,0.06) 1px, transparent 1px); background-size: 56px 56px; pointer-events: none; }
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 9rem 4vw 6rem; overflow: hidden; background: url('img/hero.jpg') center center / cover no-repeat; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(15,10,5,0.62) 0%, rgba(15,10,5,0.38) 55%, rgba(15,10,5,0.10) 100%); pointer-events: none; }
     .hero-content { position: relative; z-index: 1; max-width: 680px; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem; }
     .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
-    h1 { font-family: Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.4rem; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 1.4rem; }
     h1 em { font-style: normal; color: var(--gold); }
-    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 460px; margin-bottom: 2.5rem; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.82); max-width: 460px; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .hero-trust { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.2rem; }
-    .hero-trust span { font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 0.35rem; }
+    .hero-trust span { font-size: 0.8rem; color: rgba(255,255,255,0.72); display: flex; align-items: center; gap: 0.35rem; }
     .hero-trust span::before { content: '✓'; color: var(--gold); font-weight: 700; }
     .btn { display: inline-block; padding: 0.85rem 2rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-family: inherit; }
     .btn-primary { background: var(--gold); color: #fff; }
     .btn-primary:hover { background: var(--gold-dark); }
-    .btn-outline { background: transparent; border: 1px solid var(--border-strong); color: var(--text); }
+    .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.55); color: #fff; }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-ornament { position: absolute; right: 7vw; top: 50%; transform: translateY(-50%); width: min(320px, 34vw); aspect-ratio: 1; z-index: 1; }
-    .hero-ornament-ring { position: absolute; inset: 0; border: 1px solid var(--border-strong); border-radius: 50%; }
-    .hero-ornament-ring2 { position: absolute; inset: 18px; border: 1px solid var(--border); border-radius: 50%; }
-    .hero-ornament-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
-    .hero-ornament-icon { font-size: 4.5rem; opacity: 0.5; }
-    .hero-ornament-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-    @media (max-width: 820px) { .hero-ornament { display: none; } }
     @media (max-width: 600px) { h1 { font-size: 2.4rem; } }
 
     /* SHARED */
@@ -82,20 +74,20 @@
     .product-section-title p { color: var(--muted); font-size: 0.95rem; }
 
     /* CATEGORY CARDS */
-    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 0; }
-    @media (max-width: 900px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .cat-grid { grid-template-columns: 1fr; } }
-    #site .cat-grid { grid-template-columns: repeat(6, 1fr); }
-    #site .cat-card:nth-child(1), #site .cat-card:nth-child(2), #site .cat-card:nth-child(3) { grid-column: span 2; }
-    #site .cat-card:nth-child(4), #site .cat-card:nth-child(5) { grid-column: span 3; }
-    @media (max-width: 900px) { #site .cat-grid { grid-template-columns: repeat(2,1fr); } #site .cat-card { grid-column: span 1 !important; } }
+    .cat-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 0; }
+    .cat-grid::after { content: ''; flex: 0 0 calc(33.333% - 1px); background: var(--card); }
+    @media (max-width: 900px) { .cat-grid::after { display: none; } }
 
-    .cat-card { background: var(--card); padding: 1.6rem 1.4rem; cursor: pointer; position: relative; transition: background 0.2s; border: none; text-align: left; width: 100%; }
+    .cat-card { background: var(--card); padding: 1.6rem 1.4rem; cursor: pointer; position: relative; transition: background 0.2s; border: none; text-align: left; flex: 0 0 calc(33.333% - 1px); }
+    @media (max-width: 900px) { .cat-card { flex-basis: calc(50% - 0.5px); } }
+    @media (max-width: 500px) { .cat-card { flex-basis: 100%; } }
     .cat-card:hover { background: var(--gold-light); }
     .cat-card.active { background: var(--gold-light); }
     .cat-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
     .cat-card:hover::after, .cat-card.active::after { width: 100%; }
-    .cat-card-icon { font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
+    .cat-card-img { margin: -1.6rem -1.4rem 1rem; width: calc(100% + 2.8rem); height: 220px; overflow: hidden; }
+    .cat-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+    .cat-card:hover .cat-card-img img { transform: scale(1.05); }
     .cat-card h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
     .cat-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
     .cat-card-arrow { position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem; color: var(--gold); transition: transform 0.3s; }
@@ -119,27 +111,38 @@
 
     /* WHY */
     #proc { background: var(--bg); }
-    .why-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2rem; margin-top: 3.5rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.2rem; margin-top: 3.5rem; }
     @media (max-width: 1000px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
     @media (max-width: 700px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 420px) { .why-grid { grid-template-columns: 1fr; } }
-    .why-item { position: relative; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+    .why-item { position: relative; padding: 1.8rem 1.4rem 1.5rem; border: 1px solid var(--border-strong); border-top: 3px solid var(--border-strong); background: var(--card); transition: box-shadow 0.22s, transform 0.22s; }
+    .why-item:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.09); transform: translateY(-4px); }
     .why-item.highlight { border-top-color: var(--gold); }
-    .why-number { font-family: Georgia, serif; font-size: 3rem; font-weight: 700; color: rgba(245,168,0,0.13); line-height: 1; margin-bottom: 0.5rem; }
-    .why-item h3 { font-size: 1rem; font-family: inherit; font-weight: 600; margin-bottom: 0.4rem; }
-    .why-item p { font-size: 0.87rem; color: var(--muted); }
+    .why-icon { font-size: 1.9rem; margin-bottom: 0.9rem; line-height: 1; display: block; }
+    .why-number { font-size: 0.66rem; letter-spacing: 0.2em; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .why-item h3 { font-size: 0.95rem; font-family: inherit; font-weight: 700; margin-bottom: 0.45rem; }
+    .why-item p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
 
     /* BARBARA SECTION */
     #o-mne { background: var(--bg2); }
-    .barbara-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; }
+    .barbara-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
     @media (max-width: 700px) { .barbara-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .barbara-photo-col { display: flex; flex-direction: column; gap: 1.5rem; }
     .barbara-photo { aspect-ratio: 1; background: var(--bg3); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; max-width: 320px; }
     .barbara-photo-placeholder { font-size: 5rem; opacity: 0.35; }
     .barbara-photo-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
-    .barbara-quote { font-family: Georgia, serif; font-size: 1.15rem; line-height: 1.7; color: var(--text); margin: 1.5rem 0; padding-left: 1.5rem; border-left: 3px solid var(--gold); font-style: italic; }
-    .barbara-text { font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
-    .barbara-text p { margin-bottom: 1rem; }
-    .barbara-sig { font-family: Georgia, serif; font-size: 1.1rem; color: var(--text); margin-top: 1.5rem; }
+    .barbara-stats { border: 1px solid var(--border-strong); max-width: 320px; }
+    .barbara-stat { padding: 0.85rem 1.2rem; border-bottom: 1px solid var(--border); }
+    .barbara-stat:last-child { border-bottom: none; }
+    .barbara-stat strong { display: block; font-size: 1.05rem; font-family: Georgia, serif; color: var(--text); }
+    .barbara-stat span { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.04em; }
+    .barbara-quote { font-family: Georgia, serif; font-size: 1.2rem; line-height: 1.75; color: var(--text); margin: 1.5rem 0; padding-left: 1.5rem; border-left: 3px solid var(--gold); font-style: italic; }
+    .barbara-perks { display: flex; flex-direction: column; gap: 1.1rem; margin: 1.5rem 0; }
+    .barbara-perk { display: flex; gap: 1rem; align-items: flex-start; }
+    .barbara-perk-icon { color: var(--gold); font-size: 0.55rem; margin-top: 0.45rem; flex-shrink: 0; line-height: 1; }
+    .barbara-perk strong { display: block; font-size: 0.9rem; margin-bottom: 0.2rem; color: var(--text); }
+    .barbara-perk p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; margin: 0; }
+    .barbara-sig { font-family: Georgia, serif; font-size: 1.1rem; color: var(--text); margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
     .barbara-sig span { display: block; font-size: 0.75rem; font-family: 'Segoe UI', Arial, sans-serif; color: var(--muted); letter-spacing: 0.08em; margin-top: 0.2rem; }
 
     /* REFERENCE PLACEHOLDER */
@@ -324,10 +327,6 @@
       <span>Záruka ze zákona</span>
     </div>
   </div>
-  <div class="hero-ornament">
-    <div class="hero-ornament-ring"></div><div class="hero-ornament-ring2"></div>
-    <div class="hero-ornament-inner"><span class="hero-ornament-icon">🪟</span><span class="hero-ornament-label">Na míru</span></div>
-  </div>
 </section>
 
 <!-- ══ INTERIÉROVÉ STÍNĚNÍ ══ -->
@@ -343,14 +342,14 @@
       </div>
     </div>
     <div class="cat-grid reveal">
-      <button class="cat-card" onclick="toggleCat('horizontalni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">📐</span><h3>Horizontální žaluzie</h3><p>Klasické hliníkové žaluzie, velká barevná škála.</p></button>
-      <button class="cat-card" onclick="toggleCat('plise',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪗</span><h3>Látkové žaluzie plisé</h3><p>Elegantní skládaná tkanina, i pro atypická okna.</p></button>
-      <button class="cat-card" onclick="toggleCat('roletky',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🌀</span><h3>Textilní roletky</h3><p>Spolehlivá ochrana proti slunci, stovky látek.</p></button>
-      <button class="cat-card" onclick="toggleCat('dennoc',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">☀️🌙</span><h3>Roletky Den / Noc</h3><p>Plynule laditelná intenzita světla.</p></button>
-      <button class="cat-card" onclick="toggleCat('vertikalni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🔲</span><h3>Vertikální žaluzie</h3><p>Pro velká okna a prosklené stěny.</p></button>
-      <button class="cat-card" onclick="toggleCat('drevene',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪵</span><h3>Dřevěné žaluzie</h3><p>Přírodní lamely v různých barvách.</p></button>
-      <button class="cat-card" onclick="toggleCat('bambusove',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🎋</span><h3>Bambusové roletky</h3><p>Ekologické přírodní roletky.</p></button>
-      <button class="cat-card" onclick="toggleCat('japonske',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🏯</span><h3>Japonské stěny</h3><p>Posuvné látkové panely pro moderní interiéry.</p></button>
+      <button class="cat-card" onclick="toggleCat('horizontalni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/isoline_product.jpg" alt="Horizontální žaluzie" loading="lazy"></div><h3>Horizontální žaluzie</h3><p>Klasické hliníkové žaluzie, velká barevná škála.</p></button>
+      <button class="cat-card" onclick="toggleCat('plise',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/plise_darni.jpg" alt="Látkové žaluzie plisé" loading="lazy"></div><h3>Látkové žaluzie plisé</h3><p>Elegantní skládaná tkanina, i pro atypická okna.</p></button>
+      <button class="cat-card" onclick="toggleCat('roletky',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/roletky_collete.jpg" alt="Textilní roletky" loading="lazy"></div><h3>Textilní roletky</h3><p>Spolehlivá ochrana proti slunci, stovky látek.</p></button>
+      <button class="cat-card" onclick="toggleCat('dennoc',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/dn_jazz17.jpg" alt="Roletky Den/Noc" loading="lazy"></div><h3>Roletky Den / Noc</h3><p>Plynule laditelná intenzita světla.</p></button>
+      <button class="cat-card" onclick="toggleCat('vertikalni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/vert_standard.jpg" alt="Vertikální žaluzie" loading="lazy"></div><h3>Vertikální žaluzie</h3><p>Pro velká okna a prosklené stěny.</p></button>
+      <button class="cat-card" onclick="toggleCat('drevene',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/drevene_50.jpg" alt="Dřevěné žaluzie" loading="lazy"></div><h3>Dřevěné žaluzie</h3><p>Přírodní lamely v různých barvách.</p></button>
+      <button class="cat-card" onclick="toggleCat('bambusove',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/bambusove_asha.jpg" alt="Bambusové roletky" loading="lazy"></div><h3>Bambusové roletky</h3><p>Ekologické přírodní roletky.</p></button>
+      <button class="cat-card" onclick="toggleCat('japonske',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/japonska_stena.jpg" alt="Japonské stěny" loading="lazy"></div><h3>Japonské stěny</h3><p>Posuvné látkové panely pro moderní interiéry.</p></button>
     </div>
 
     <div class="detail-panel" id="panel-horizontalni">
@@ -681,11 +680,11 @@
       </div>
     </div>
     <div class="cat-grid reveal">
-      <button class="cat-card" onclick="toggleCat('site-okenni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪟</span><h3>Pevné okenní sítě rámové</h3><p>Hliníkový rám přesně na míru okna.</p></button>
-      <button class="cat-card" onclick="toggleCat('site-dverni',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🚪</span><h3>Pevné dveřní sítě rámové</h3><p>Odolná konstrukce pro dveřní otvory.</p></button>
-      <button class="cat-card" onclick="toggleCat('site-rolovaci',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">📜</span><h3>Rolovací sítě</h3><p>Tiché navíjení, pro okna i dveře.</p></button>
-      <button class="cat-card" onclick="toggleCat('site-plise',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">🪗</span><h3>Plisé sítě dveřní</h3><p>Průchod bez použití rukou, magnetické dovírání.</p></button>
-      <button class="cat-card" onclick="toggleCat('site-posuvne',this)"><span class="cat-card-arrow">▼</span><span class="cat-card-icon">↔️</span><h3>Posuvné sítě dveřní</h3><p>Posun do strany, pro terasy a velké otvory.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-okenni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_oe.jpg" alt="Pevné okenní sítě" loading="lazy"></div><h3>Pevné okenní sítě rámové</h3><p>Hliníkový rám přesně na míru okna.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-dverni',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_dv.jpg" alt="Pevné dveřní sítě" loading="lazy"></div><h3>Pevné dveřní sítě rámové</h3><p>Odolná konstrukce pro dveřní otvory.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-rolovaci',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_psr1.jpg" alt="Rolovací sítě" loading="lazy"></div><h3>Rolovací sítě</h3><p>Tiché navíjení, pro okna i dveře.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-plise',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_plise_neo.jpg" alt="Plisé sítě" loading="lazy"></div><h3>Plisé sítě dveřní</h3><p>Průchod bez použití rukou, magnetické dovírání.</p></button>
+      <button class="cat-card" onclick="toggleCat('site-posuvne',this)"><span class="cat-card-arrow">▼</span><div class="cat-card-img"><img src="img/site_ps1.jpg" alt="Posuvné sítě" loading="lazy"></div><h3>Posuvné sítě dveřní</h3><p>Posun do strany, pro terasy a velké otvory.</p></button>
     </div>
 
     <div class="detail-panel" id="panel-site-okenni">
@@ -906,29 +905,34 @@
     <h2 class="reveal">Přístup, na který<br>se můžete spolehnout</h2>
     <div class="why-grid">
       <div class="why-item reveal">
+        <span class="why-icon">📐</span>
         <div class="why-number">01</div>
         <h3>Zaměření zdarma</h3>
         <p>Přijedu k vám do 5 pracovních dnů, přesně zaměřím a poradím — bez poplatku, bez závazku.</p>
       </div>
       <div class="why-item reveal">
+        <span class="why-icon">✂️</span>
         <div class="why-number">02</div>
         <h3>Výroba na míru</h3>
         <p>Každý produkt vzniká přesně podle rozměrů vašich oken a dveří. Žádné kompromisy, žádné "přibližně".</p>
       </div>
       <div class="why-item reveal">
+        <span class="why-icon">🗓️</span>
         <div class="why-number">03</div>
-        <h3>Montáž do 3 týdnů</h3>
-        <p>Instalaci provádím osobně — čistě, rychle, bez starostí. Od zaměření k hotové montáži do 3 týdnů.</p>
+        <h3>Zaměřím i druhý den</h3>
+        <p>Montáž provádím osobně — čistě, bez starostí. Zpravidla hotovo do 14 dní od zaměření.</p>
       </div>
       <div class="why-item reveal">
+        <span class="why-icon">📍</span>
         <div class="why-number">04</div>
-        <h3>Místní, znám váš region</h3>
-        <p>Provozuji v Jindřichově Hradci. Záruční servis pro mě není formalita — jsem kousek od vás.</p>
+        <h3>Jižní Čechy & Vysočina</h3>
+        <p>Působím do ~70 km od Jindřichova Hradce — celé jižní Čechy a část Vysočiny. Jsem místní, ne call centrum.</p>
       </div>
       <div class="why-item highlight reveal">
+        <span class="why-icon">🛡️</span>
         <div class="why-number">05</div>
         <h3>Zákonná záruka 2 roky</h3>
-        <p>Na každou montáž se vztahuje zákonná záruka 24 měsíců. Problémy řešíme férově a bez zbytečného odkládání.</p>
+        <p>Na každou montáž se vztahuje zákonná záruka 24 měsíců. Stojím za svou prací a jsem tu pro vás i po montáži.</p>
       </div>
     </div>
   </div>
@@ -939,9 +943,25 @@
 <section id="o-mne">
   <div class="container">
     <div class="barbara-layout">
-      <div class="barbara-photo reveal">
-        <div class="barbara-photo-placeholder">👩</div>
-        <div class="barbara-photo-label">Barbora Drunecká</div>
+      <div class="barbara-photo-col reveal">
+        <div class="barbara-photo">
+          <div class="barbara-photo-placeholder">👩</div>
+          <div class="barbara-photo-label">Barbora Drunecká</div>
+        </div>
+        <div class="barbara-stats">
+          <div class="barbara-stat">
+            <strong>Od A do Z</strong>
+            <span>jedna osoba, celá zakázka</span>
+          </div>
+          <div class="barbara-stat">
+            <strong>Do 3 týdnů</strong>
+            <span>od zaměření po montáž</span>
+          </div>
+          <div class="barbara-stat">
+            <strong>100 % na míru</strong>
+            <span>žádné katalogové rozměry</span>
+          </div>
+        </div>
       </div>
       <div class="reveal">
         <div class="section-label">Za BID Solution stojí člověk</div>
@@ -949,9 +969,28 @@
         <blockquote class="barbara-quote">
           "Nejsem anonymní firma ani e-shop. Jsem živnostnice z Jindřichohradecka, která dělá svoji práci poctivě a ručí za ni jménem."
         </blockquote>
-        <div class="barbara-text">
-          <p>Každou zakázku dělám od A do Z sama — přijedu, zaměřím, objednám výrobu na míru a osobně namontuju. Díky tomu vím přesně co dělám a za každý krok ručím.</p>
-          <p>Pracuji v regionu kde žiji. Moji zákazníci jsou sousedé, ne čísla v databázi. Pokud se něco nepovede, zavolejte — přijedu a vyřešíme to.</p>
+        <div class="barbara-perks">
+          <div class="barbara-perk">
+            <div class="barbara-perk-icon">◆</div>
+            <div>
+              <strong>Přijedu, zaměřím, namontuju</strong>
+              <p>Každou zakázku dělám od A do Z sama. Žádný prostředník, žádné předávání zodpovědnosti.</p>
+            </div>
+          </div>
+          <div class="barbara-perk">
+            <div class="barbara-perk-icon">◆</div>
+            <div>
+              <strong>Sousedé, ne čísla v databázi</strong>
+              <p>Pracuji v regionu kde žiju. Moji zákazníci mě znají jménem — a já znám je.</p>
+            </div>
+          </div>
+          <div class="barbara-perk">
+            <div class="barbara-perk-icon">◆</div>
+            <div>
+              <strong>Pokud se něco nepovede — zavolejte</strong>
+              <p>Přijedu a vyřeším to. Ručím za každý krok svým jménem.</p>
+            </div>
+          </div>
         </div>
         <div class="barbara-sig">
           Barbora Ivanka Drunecká
