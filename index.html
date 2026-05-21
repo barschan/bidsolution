@@ -150,13 +150,40 @@
     .barbara-sig { font-family: Georgia, serif; font-size: 1.1rem; color: var(--text); margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
     .barbara-sig span { display: block; font-size: 0.75rem; font-family: 'Segoe UI', Arial, sans-serif; color: var(--muted); letter-spacing: 0.08em; margin-top: 0.2rem; }
 
-    /* REFERENCE PLACEHOLDER */
-    #reference { background: var(--bg); }
-    .ref-coming { border: 1px dashed var(--border-strong); padding: 3rem 2.5rem; text-align: center; background: var(--gold-light); max-width: 700px; margin: 3rem auto 0; }
-    .ref-coming-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .ref-coming h3 { font-family: Georgia, serif; font-size: 1.2rem; margin-bottom: 0.6rem; }
-    .ref-coming p { font-size: 0.9rem; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
-    .ref-coming-cta { margin-top: 1.5rem; font-size: 0.82rem; color: var(--gold-dark); font-weight: 600; }
+    /* REALIZACE - okýnka rozklikávací */
+    #realizace { background: var(--bg); }
+    .real-intro { max-width: 720px; margin-bottom: 3rem; }
+    .real-intro p { color: var(--muted); font-size: 1rem; line-height: 1.75; }
+    .real-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+    @media (max-width: 900px) { .real-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .real-grid { grid-template-columns: 1fr; } }
+    .real-card { background: var(--card); border: 1px solid var(--border); cursor: pointer; display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; position: relative; overflow: hidden; }
+    .real-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0,0,0,0.10); border-color: var(--border-strong); }
+    .real-window { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--bg2); position: relative; }
+    .real-window img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .real-card:hover .real-window img { transform: scale(1.06); }
+    .real-count { position: absolute; bottom: 0.75rem; right: 0.75rem; background: rgba(15,10,5,0.78); color: #fff; font-size: 0.72rem; padding: 0.3rem 0.7rem; letter-spacing: 0.08em; }
+    .real-body { padding: 1.3rem 1.4rem 1.5rem; }
+    .real-loc { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+    .real-loc::before { content: '📍'; font-size: 0.8rem; }
+    .real-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; line-height: 1.3; }
+    .real-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .real-cta { margin-top: 1rem; font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold-dark); text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s, color 0.2s; }
+    .real-card:hover .real-cta { gap: 0.7rem; color: var(--gold); }
+    .real-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+    .real-tag { font-size: 0.68rem; padding: 0.22rem 0.65rem; background: var(--gold-light); color: var(--gold-dark); border: 1px solid var(--border); letter-spacing: 0.04em; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(15,10,5,0.92); z-index: 1000; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; background: transparent; border: 1px solid rgba(255,255,255,0.5); color: #fff; width: 44px; height: 44px; font-size: 1.5rem; cursor: pointer; transition: all 0.2s; }
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: transparent; border: 1px solid rgba(255,255,255,0.5); color: #fff; width: 48px; height: 48px; font-size: 1.5rem; cursor: pointer; transition: all 0.2s; }
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+    .lightbox-prev:hover, .lightbox-next:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-counter { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.7); font-size: 0.85rem; letter-spacing: 0.1em; }
 
     /* OBLAST */
     #oblast { background: var(--bg2); }
@@ -315,6 +342,7 @@
       </div>
     </li>
     <li><a href="#proc">Proč my</a></li>
+    <li><a href="#realizace">Realizace</a></li>
     <li><a href="#oblast">Oblast</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
@@ -1010,22 +1038,85 @@
   </div>
 </section>
 
-<!-- REFERENCE -->
+<!-- REALIZACE -->
 <div class="divider"></div>
-<section id="reference">
+<section id="realizace">
   <div class="container">
-    <div class="section-label reveal">Hodnocení zákazníků</div>
-    <h2 class="reveal">Co říkají zákazníci</h2>
-    <div class="ref-coming reveal">
-      <div class="ref-coming-icon">⭐</div>
-      <h3>Právě sbíráme první hodnocení</h3>
-      <p>BID Solution je nový projekt a teprve začínáme budovat portfolio spokojených zákazníků. Chcete být jedním z prvních? Rádi vám prokážeme, jak pracujeme.</p>
-      <div class="ref-coming-cta">
-        <a href="#kontakt" class="btn btn-primary" style="margin-top:1rem;display:inline-block;">Domluvit bezplatné zaměření →</a>
-      </div>
+    <div class="section-label reveal">Z naší práce</div>
+    <h2 class="reveal">Realizace</h2>
+    <div class="real-intro reveal">
+      <p>Pár ukázek z poslední doby. Každá zakázka jiná — byt v bytovce, rodinný dům, zasklená lodžie. Klikněte na okýnko a podívejte se na fotky.</p>
+    </div>
+
+    <div class="real-grid">
+
+      <!-- VIDOV -->
+      <article class="real-card reveal" onclick="openLightbox('vidov', 0)">
+        <div class="real-window">
+          <img src="img/realizace/vidov/vidov-1.jpg" alt="Horizontální žaluzie — rodinný dům Vidov" loading="lazy">
+          <span class="real-count">4 fotky</span>
+        </div>
+        <div class="real-body">
+          <span class="real-loc">Vidov</span>
+          <h3>Výměna žaluzií v celém rodinném domě</h3>
+          <p>Staré rozbité horizontální žaluzie ven, nové bílé dovnitř — kuchyň a pokoje. Celý dům v jednom dni.</p>
+          <div class="real-tags">
+            <span class="real-tag">Hliníkové žaluzie</span>
+            <span class="real-tag">Rodinný dům</span>
+            <span class="real-tag">Výměna</span>
+          </div>
+          <span class="real-cta">Podívat se →</span>
+        </div>
+      </article>
+
+      <!-- PLUHŮV ŽĎÁR -->
+      <article class="real-card reveal" onclick="openLightbox('pluhuv-zdar', 0)">
+        <div class="real-window">
+          <img src="img/realizace/pluhuv-zdar/pluhuv-zdar-1.jpg" alt="Hliníkové žaluzie — byt v bytovce, Pluhův Žďár" loading="lazy">
+          <span class="real-count">5 fotek</span>
+        </div>
+        <div class="real-body">
+          <span class="real-loc">Pluhův Žďár</span>
+          <h3>Žaluzie do bytu v bytovce</h3>
+          <p>Všechna okna a balkonové dveře. Žaluzie šly nahoru ještě před nastěhováním — ať majitelé od prvního dne nekoukají sousedům do okna.</p>
+          <div class="real-tags">
+            <span class="real-tag">Hliníkové žaluzie</span>
+            <span class="real-tag">Byt v bytovce</span>
+          </div>
+          <span class="real-cta">Podívat se →</span>
+        </div>
+      </article>
+
+      <!-- SEPEKOV -->
+      <article class="real-card reveal" onclick="openLightbox('sepekov', 0)">
+        <div class="real-window">
+          <img src="img/realizace/sepekov/sepekov-1.jpg" alt="Šedé textilní roletky — zasklená lodžie, Sepekov" loading="lazy">
+          <span class="real-count">4 fotky</span>
+        </div>
+        <div class="real-body">
+          <span class="real-loc">Sepekov</span>
+          <h3>Šedé roletky na zasklenou lodžii</h3>
+          <p>Zasklená lodžie. Šedé textilní roletky, jednoduchá regulace světla i v poledním slunci.</p>
+          <div class="real-tags">
+            <span class="real-tag">Textilní roletky</span>
+            <span class="real-tag">Zasklená lodžie</span>
+          </div>
+          <span class="real-cta">Podívat se →</span>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Zavřít">×</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1)" aria-label="Předchozí">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="lightboxNav(1)" aria-label="Další">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
 
 <!-- OBLAST -->
 <div class="divider"></div>
@@ -1176,6 +1267,64 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     btn.disabled = false;
     btn.textContent = 'Odeslat poptávku →';
   });
+});
+
+/* LIGHTBOX pro Realizace */
+var realGalleries = {
+  'vidov': [
+    'img/realizace/vidov/vidov-1.jpg',
+    'img/realizace/vidov/vidov-2.jpg',
+    'img/realizace/vidov/vidov-3.jpg',
+    'img/realizace/vidov/vidov-4.jpg'
+  ],
+  'pluhuv-zdar': [
+    'img/realizace/pluhuv-zdar/pluhuv-zdar-1.jpg',
+    'img/realizace/pluhuv-zdar/pluhuv-zdar-2.jpg',
+    'img/realizace/pluhuv-zdar/pluhuv-zdar-3.jpg',
+    'img/realizace/pluhuv-zdar/pluhuv-zdar-4.jpg',
+    'img/realizace/pluhuv-zdar/pluhuv-zdar-5.jpg'
+  ],
+  'sepekov': [
+    'img/realizace/sepekov/sepekov-1.jpg',
+    'img/realizace/sepekov/sepekov-2.jpg',
+    'img/realizace/sepekov/sepekov-3.jpg',
+    'img/realizace/sepekov/sepekov-4.jpg'
+  ]
+};
+var lbCurrentGallery = null;
+var lbCurrentIndex = 0;
+
+function openLightbox(galleryId, index) {
+  lbCurrentGallery = galleryId;
+  lbCurrentIndex = index || 0;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLightboxOnBg(e) {
+  if (e.target.id === 'lightbox') closeLightbox();
+}
+function lightboxNav(delta) {
+  if (!lbCurrentGallery) return;
+  var arr = realGalleries[lbCurrentGallery];
+  lbCurrentIndex = (lbCurrentIndex + delta + arr.length) % arr.length;
+  updateLightbox();
+}
+function updateLightbox() {
+  var arr = realGalleries[lbCurrentGallery];
+  document.getElementById('lightboxImg').src = arr[lbCurrentIndex];
+  document.getElementById('lightboxCounter').textContent = (lbCurrentIndex + 1) + ' / ' + arr.length;
+}
+document.addEventListener('keydown', function(e) {
+  var lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') lightboxNav(-1);
+  else if (e.key === 'ArrowRight') lightboxNav(1);
 });
 </script>
 
