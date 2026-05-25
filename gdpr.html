@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zásady ochrany osobních údajů – BID Solution</title>
-  <meta name="description" content="Zásady ochrany osobních údajů — Barbora Ivanka Drunecká, BID Solution. Jak nakládáme s osobními údaji v souladu s GDPR." />
+  <meta name="description" content="Zásady ochrany osobních údajů pro web www.bidsolution.cz — Barbora Ivanka Drunecká." />
   <meta name="robots" content="index, follow" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +18,6 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.75; }
 
-    /* HEADER */
     .gdpr-nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,248,0.97); border-bottom: 1px solid var(--border); padding: 1rem 4vw; display: flex; align-items: center; gap: 1.5rem; backdrop-filter: blur(8px); }
     .gdpr-back { background: none; border: 1px solid var(--border-strong); padding: 0.55rem 1.2rem; color: var(--text); cursor: pointer; font-family: inherit; font-size: 0.85rem; letter-spacing: 0.04em; text-decoration: none; transition: all 0.2s; }
     .gdpr-back:hover { background: var(--gold-light); border-color: var(--gold); color: var(--gold-dark); }
@@ -26,22 +25,20 @@
     .gdpr-title-inline { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-left: auto; }
     @media (max-width: 700px) { .gdpr-title-inline { display: none; } }
 
-    /* CONTENT */
     .gdpr-wrap { max-width: 880px; margin: 0 auto; padding: 3rem 4vw 5rem; }
     .gdpr-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
     .gdpr-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--gold); display: inline-block; }
-    h1 { font-family: Georgia, serif; font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 2.5rem; color: var(--text); }
-    h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 0.4rem; color: var(--text); }
+    h1 { font-family: Georgia, serif; font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; color: var(--text); }
+    .gdpr-subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; }
+    h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 0.6rem; color: var(--text); }
     .roman { color: var(--gold); font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 600; display: block; margin-bottom: 0.3rem; }
     p { margin-bottom: 1rem; color: var(--text); font-size: 0.98rem; }
     ol, ul { margin: 0.6rem 0 1rem 1.8rem; }
-    ol li, ul li { margin-bottom: 0.6rem; font-size: 0.98rem; }
-    ul ul, ol ul { margin-top: 0.4rem; }
-    .gdpr-contact-block { background: var(--card); border: 1px solid var(--border); padding: 1rem 1.4rem; margin: 0.6rem 0 0.6rem 0; }
+    ol li, ul li { margin-bottom: 0.8rem; font-size: 0.98rem; }
+    .gdpr-contact-block { background: var(--card); border: 1px solid var(--border); padding: 1rem 1.4rem; margin: 0.6rem 0 1.5rem; }
     .gdpr-contact-block div { font-size: 0.95rem; padding: 0.15rem 0; }
     .gdpr-effective { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-strong); color: var(--muted); font-size: 0.92rem; font-style: italic; }
 
-    /* FOOTER */
     footer { background: #14110c; color: rgba(255,255,255,0.55); padding: 2.5rem 4vw; text-align: center; font-size: 0.82rem; }
     footer a { color: var(--gold); text-decoration: none; }
     footer a:hover { color: #fff; }
@@ -50,7 +47,7 @@
 <body>
 
 <header class="gdpr-nav">
-  <a href="bidsolution_updated.html" class="gdpr-back">← Zpět na web</a>
+  <a href="index.html" class="gdpr-back">← Zpět na web</a>
   <span class="gdpr-brand">BID Solution</span>
   <span class="gdpr-title-inline">Zásady ochrany osobních údajů</span>
 </header>
@@ -58,126 +55,83 @@
 <main class="gdpr-wrap">
   <div class="gdpr-eyebrow">Právní dokument</div>
   <h1>Zásady ochrany osobních údajů</h1>
+  <div class="gdpr-subtitle">pro web www.bidsolution.cz</div>
+
+  <div class="gdpr-contact-block">
+    <div><strong>Jméno podnikatele:</strong> Barbora |Ivanka Drunecká</div>
+    <div><strong>Sídlo:</strong> Pluhův Žďár 30, 378 21</div>
+    <div><strong>IČO:</strong> 69771341</div>
+    <div><strong>E-mail:</strong> <a href="mailto:info@bidsolution.cz" style="color: var(--gold-dark);">info@bidsolution.cz</a></div>
+    <div><strong>Telefon:</strong> <a href="tel:+420606643865" style="color: var(--gold-dark);">606&nbsp;643&nbsp;865</a></div>
+  </div>
+  <p>(dále jen „Poskytovatel“)</p>
+  <p>(dále také jen „Správce“)</p>
 
   <section>
     <span class="roman">I.</span>
-    <h2>Základní ustanovení</h2>
-    <ol>
-      <li>Správcem osobních údajů podle čl. 4 bod 7 nařízení Evropského parlamentu a Rady (EU) 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů a o volném pohybu těchto údajů (dále jen: „GDPR") je <strong>Barbora Ivanka Drunecká</strong>, IČ 69771341, se sídlem Pluhův Žďár 30, 378 21 Pluhův Žďár (dále jen: „správce").</li>
-      <li>Kontaktní údaje správce jsou:
-        <div class="gdpr-contact-block">
-          <div><strong>Adresa:</strong> Pluhův Žďár 30, 378 21 Pluhův Žďár</div>
-          <div><strong>E-mail:</strong> <a href="mailto:info@bidsolution.cz" style="color: var(--gold-dark);">info@bidsolution.cz</a></div>
-          <div><strong>Telefon:</strong> <a href="tel:+420606643865" style="color: var(--gold-dark);">+420 606 643 865</a></div>
-        </div>
-      </li>
-      <li>Osobními údaji se rozumí veškeré informace o identifikované nebo identifikovatelné fyzické osobě; identifikovatelnou fyzickou osobou je fyzická osoba, kterou lze přímo či nepřímo identifikovat, zejména odkazem na určitý identifikátor, například jméno, identifikační číslo, lokační údaje, síťový identifikátor nebo na jeden či více zvláštních prvků fyzické, fyziologické, genetické, psychické, ekonomické, kulturní nebo společenské identity této fyzické osoby.</li>
-      <li>Správce nejmenoval pověřence pro ochranu osobních údajů.</li>
-    </ol>
+    <h2>Pojmy</h2>
+    <p>Správce je provozovatelem webových stránek, online služeb a dalších projektů v síti internet (dále jen „Služby“), sdružených na stránkách www.bidsolution.cz. Při provozu uvedených Služeb Správce zpracovává osobní údaje fyzických osob.</p>
+    <p>Osobní údaje jsou identifikátory, které uživatel (subjekt údajů) Správci sdělil a které jsou samostatně či ve spojení s dalšími identifikátory schopné identifikovat konkrétní subjekt údajů.</p>
+    <p>Subjekt údajů je pro účely těchto Zásad fyzická osoba, jejíž údaje jsou Správcem při provozu Služeb zpracovány.</p>
+    <p>Zpracování osobních údajů znamená jednotlivý úkon či soubor úkonů, k nimž systematicky dochází při nakládání s osobními údaji. Jedná se zejména o jejich shromažďování, uspořádání, ukládání, vyhledávání, používání, řazení a třídění v databázích, blokování a další.</p>
+    <p>Zpracovatel je fyzická či právnická osoba, kterou Správce pověřil zpracováním osobních údajů pro účely stanovení Správcem.</p>
+    <p>Právní rámec, kterým se Správce při zpracování osobních údajů řídí, je dle nařízení č. 2016/679 Evropského parlamentu a Rady EU, o ochraně fyzických osob v souvislosti se zpracováním osobních údajů (dále jen „nařízení GDPR“) a dle zákona č. 110/2019 Sb., o zpracování osobních údajů.</p>
   </section>
 
   <section>
     <span class="roman">II.</span>
-    <h2>Zdroje a kategorie zpracovávaných osobních údajů</h2>
+    <h2>Účel zpracování osobních údajů</h2>
     <ol>
-      <li>Správce zpracovává osobní údaje, které jste mu poskytl/a nebo osobní údaje, které správce získal na základě plnění Vaší objednávky.</li>
-      <li>Správce zpracovává Vaše identifikační a kontaktní údaje a údaje nezbytné pro plnění smlouvy.</li>
+      <li>Účelem zpracování osobních údajů je využití Služeb poskytovaných Správcem a informační a marketingová činnost Správce (zasílání e-mailových newsletterů a dalších obchodních sdělení).</li>
+      <li>Právním základem zpracování osobních údajů je uzavřená smlouva, objednávka či udělený souhlas ze strany subjektů údajů.</li>
+      <li>E-mailové newslettery a další e-mailové zprávy charakteru obchodních sdělení Správce zasílá na základě uděleného zvláštního souhlasu ve smyslu z.&nbsp;č. 480/2004 Sb., o některých službách informační společnosti, k zasílání e-mailových zpráv (newsletterů). Dále správce zasílá e-mailové zprávy svým zákazníkům, tedy osobám, které využili Služeb Správce, v rámci zákonných možností stanovených uvedeným z.&nbsp;č. 480/2004 Sb., a to i bez předchozího výslovného souhlasu se zasíláním obchodních sdělení.</li>
+      <li>Správce zpracovává osobní údaje v rozsahu, ve kterém byly uživateli poskytnuty a pouze pro shora uvedené účely (nákup zboží či služeb / uzavření smlouvy, další využití Služeb a zasílání informací formou e-mailových newsletterů).</li>
+      <li>Správce při provozu svých stránek užívá soubory cookies a další elektronické identifikátory (společně dále jen „cookies“), jejich účel a užití se řídí pravidly pro zpracování souborů cookies, s nimiž je uživatel seznámen v rámci cookies lišty, kde dává souhlas se zpracování svých osobních údajů při užití cookies a dále v pravidlech, která pro tyto účely Správce zveřejnil v souladu dle skutečného užití souborů cookies.</li>
     </ol>
   </section>
 
   <section>
     <span class="roman">III.</span>
-    <h2>Zákonný důvod a účel zpracování osobních údajů</h2>
-    <ol>
-      <li>Zákonným důvodem zpracování osobních údajů je:
-        <ul>
-          <li>plnění smlouvy mezi Vámi a správcem podle čl. 6 odst. 1 písm. b) GDPR,</li>
-          <li>oprávněný zájem správce na poskytování přímého marketingu (zejména pro zasílání obchodních sdělení a newsletterů) podle čl. 6 odst. 1 písm. f) GDPR,</li>
-          <li>Váš souhlas se zpracováním pro účely poskytování přímého marketingu (zejména pro zasílání obchodních sdělení a newsletterů) podle čl. 6 odst. 1 písm. a) GDPR ve spojení s § 7 odst. 2 zákona č. 480/2004 Sb., o některých službách informační společnosti v případě, že nedošlo k objednávce zboží nebo služby.</li>
-        </ul>
-      </li>
-      <li>Účelem zpracování osobních údajů je:
-        <ul>
-          <li>vyřízení Vaší objednávky a výkon práv a povinností vyplývajících ze smluvního vztahu mezi Vámi a správcem; při objednávce jsou vyžadovány osobní údaje, které jsou nutné pro úspěšné vyřízení objednávky (jméno a adresa, kontakt), poskytnutí osobních údajů je nutným požadavkem pro uzavření a plnění smlouvy, bez poskytnutí osobních údajů není možné smlouvu uzavřít či jí ze strany správce plnit,</li>
-          <li>zasílání obchodních sdělení a činění dalších marketingových aktivit.</li>
-        </ul>
-      </li>
-      <li>Ze strany správce nedochází k automatickému individuálnímu rozhodování ve smyslu čl. 22 GDPR.</li>
+    <h2>Doba uchování osobních údajů</h2>
+    <p>Správce uchovává sdělené osobní údaje po následující dobu:</p>
+    <ol type="a">
+      <li>V případě trvání smluvního vztahu po dobu jeho trvání a následujících 2 let po jeho ukončení (a to z důvodu možné reklamace či dalších nároků smluvních stran.</li>
+      <li>Po dobu 2 let od posledního využití služby uživatelem.</li>
+      <li>Do odvolání souhlasu či obdobného úkonu uživatele, kterým odvolá možnost zpracování svých osobních údajů Správcem.</li>
     </ol>
   </section>
 
   <section>
     <span class="roman">IV.</span>
-    <h2>Doba uchovávání údajů</h2>
-    <ol>
-      <li>Správce uchovává osobní údaje:
-        <ul>
-          <li>po dobu nezbytnou k výkonu práv a povinností vyplývajících ze smluvního vztahu mezi Vámi a správcem a uplatňování nároků z těchto smluvních vztahů (po dobu 15 let od ukončení smluvního vztahu),</li>
-          <li>po dobu, než je odvolán souhlas se zpracováním osobních údajů pro účely marketingu, nejdéle 5 let, jsou-li osobní údaje zpracovávány na základě souhlasu.</li>
-        </ul>
-      </li>
-      <li>Po uplynutí doby uchovávání osobních údajů správce osobní údaje vymaže.</li>
-    </ol>
+    <h2>Práva subjektů údajů</h2>
+    <p>Správce garantuje subjektům údajů v souvislosti se zpracováním osobních údajů zejména tato práva, která vychází z nařízení GDPR:</p>
+    <ul>
+      <li>Subjekty údajů mají právo na přístup ke svým osobním údajům. Dále mají právo na jejich opravu a/nebo doplnění nebo jejich výmaz, popřípadě mohou požadovat omezení zpracování svých osobních údajů, jakož i právo nebýt předmětem automatizovaného individualizovaného rozhodování (vč. profilování).</li>
+      <li>Subjekty údajů mají právo vznést námitku proti zpracování svých osobních údajů.</li>
+      <li>Subjekty údajů mají právo na přenositelnost údajů ve strukturovaném, běžně používaném a strojově čitelném formátu.</li>
+      <li>Subjekty údajů jsou oprávněny kdykoliv udělený souhlas se zpracováním osobních údajů odvolat. Pro odvolání souhlasu Správce doporučuje využít tento svůj kontaktní email: <a href="mailto:info@bidsolution.cz" style="color: var(--gold-dark);">info@bidsolution.cz</a></li>
+      <li>Subjekty údajů jsou oprávněny podat stížnost u dozorového úřadu, kterým je Úřad pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener" style="color: var(--gold-dark);">www.uoou.cz</a>), se sídlem Pplk. Sochora 27, 170 00 Praha 7, email <a href="mailto:posta@uoou.cz" style="color: var(--gold-dark);">posta@uoou.cz</a>, datová schránka qkbaa2n.</li>
+    </ul>
   </section>
 
   <section>
     <span class="roman">V.</span>
-    <h2>Příjemci osobních údajů (subdodavatelé správce)</h2>
-    <ol>
-      <li>Příjemci osobních údajů jsou osoby:
-        <ul>
-          <li>podílející se na dodání zboží / služeb / realizaci plateb na základě smlouvy,</li>
-          <li>podílející se na zajištění provozu služeb,</li>
-          <li>zajišťující marketingové služby.</li>
-        </ul>
-      </li>
-      <li>Správce nemá v úmyslu předat osobní údaje do třetí země (do země mimo EU) nebo mezinárodní organizaci. Příjemci osobních údajů ve třetích zemích jsou poskytovatelé mailingových služeb / cloudových služeb.</li>
-    </ol>
-  </section>
-
-  <section>
-    <span class="roman">VI.</span>
-    <h2>Vaše práva</h2>
-    <ol>
-      <li>Za podmínek stanovených v GDPR máte:
-        <ul>
-          <li>právo na přístup ke svým osobním údajům dle čl. 15 GDPR,</li>
-          <li>právo na opravu osobních údajů dle čl. 16 GDPR, popřípadě omezení zpracování dle čl. 18 GDPR,</li>
-          <li>právo na výmaz osobních údajů dle čl. 17 GDPR,</li>
-          <li>právo vznést námitku proti zpracování dle čl. 21 GDPR,</li>
-          <li>právo na přenositelnost údajů dle čl. 20 GDPR,</li>
-          <li>právo odvolat souhlas se zpracováním písemně nebo elektronicky na adresu nebo e‑mail správce uvedený v čl. I těchto podmínek.</li>
-        </ul>
-      </li>
-      <li>Dále máte právo podat stížnost u Úřadu pro ochranu osobních údajů v případě, že se domníváte, že bylo porušeno Vaše právo na ochranu osobních údajů.</li>
-    </ol>
-  </section>
-
-  <section>
-    <span class="roman">VII.</span>
-    <h2>Podmínky zabezpečení osobních údajů</h2>
-    <ol>
-      <li>Správce prohlašuje, že přijal veškerá vhodná technická a organizační opatření k zabezpečení osobních údajů.</li>
-      <li>Správce přijal technická opatření k zabezpečení datových úložišť a úložišť osobních údajů v listinné podobě.</li>
-      <li>Správce prohlašuje, že k osobním údajům mají přístup pouze jím pověřené osoby.</li>
-    </ol>
-  </section>
-
-  <section>
-    <span class="roman">VIII.</span>
     <h2>Závěrečná ustanovení</h2>
     <ol>
-      <li>Odesláním objednávky z internetového objednávkového formuláře potvrzujete, že jste seznámen/a s podmínkami ochrany osobních údajů a že je v celém rozsahu přijímáte.</li>
-      <li>S těmito podmínkami souhlasíte zaškrtnutím souhlasu prostřednictvím internetového formuláře. Zaškrtnutím souhlasu potvrzujete, že jste seznámen/a s podmínkami ochrany osobních údajů a že je v celém rozsahu přijímáte.</li>
-      <li>Správce je oprávněn tyto podmínky změnit. Novou verzi podmínek ochrany osobních údajů zveřejní na svých internetových stránkách, případně Vám zašle novou verzi těchto podmínek na e‑mailovou adresu, kterou jste správci poskytl/a.</li>
+      <li>Správce při zpracování údajů dle shora vymezených účelů využívá zpracovatele a ujišťuje subjekty údajů, že pro zpracování osobních údajů vybral takové zpracovatele, kteří mohou garantovat v rámci ochrany osobních údajů stejnou míru zabezpečení osobních údajů při zpracování jako Správce. Těmito zpracovateli jsou:
+        <div style="margin-top: 0.5rem; padding-left: 1rem; color: var(--muted); font-style: italic;">Barbora Ivanka Drunecká</div>
+      </li>
+      <li>Správce při své činnosti nepředává osobní údaje mimo země EU.</li>
+      <li>Správce si vyhrazuje právo je změnit v případě změn na straně Správce či právní úpravy v této oblasti.</li>
+      <li>Tyto Zásady ochrany osobních údajů jsou účinné ode dne 25.&nbsp;5.&nbsp;2026.</li>
     </ol>
   </section>
 
-  <div class="gdpr-effective">Tyto podmínky nabývají účinnosti dnem 26.&nbsp;7.&nbsp;2025.</div>
+  <div class="gdpr-effective">Účinnost: 25.&nbsp;5.&nbsp;2026</div>
 </main>
 
 <footer>
-  Barbora Ivanka Drunecká &nbsp;·&nbsp; IČO: 69771341 &nbsp;·&nbsp; <a href="bidsolution_updated.html">BID Solution</a>
+  Barbora Ivanka Drunecká &nbsp;·&nbsp; IČO: 69771341 &nbsp;·&nbsp; <a href="index.html">BID Solution</a>
 </footer>
 
 </body>
