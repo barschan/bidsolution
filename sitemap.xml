@@ -2,14 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bidsolution.cz/</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-13</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bidsolution.cz/horizontalni-zaluzie.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/plise-zaluzie.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/textilni-rolety.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/rolety-den-noc.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/vertikalni-zaluzie.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/drevene-zaluzie.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/bambusove-rolety.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/japonske-steny.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/okenni-site-proti-hmyzu.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/dverni-site-proti-hmyzu.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/rolovaci-site-proti-hmyzu.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/plise-site-proti-hmyzu.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/posuvne-site-proti-hmyzu.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/site-a-stineni-jindrichuv-hradec.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/site-a-stineni-tabor.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/site-a-stineni-kamenice-nad-lipou.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/site-a-stineni-veseli-nad-luznici.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bidsolution.cz/site-a-stineni-sobeslav.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bidsolution.cz/gdpr.html</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>
